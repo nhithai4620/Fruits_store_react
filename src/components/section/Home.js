@@ -6,7 +6,6 @@ import '../css/Home.css';
 import {Link} from "react-router-dom";
 import {DataContext} from '../Context';
 
-
 export class Home extends React.Component{
     static contextType = DataContext;
     render(){
@@ -22,10 +21,11 @@ export class Home extends React.Component{
             arrows:true , 
             autoplaySpeed:2700
             };  
-            return (  
+            return (
                 <div id="home">
                   <div className="logan"><p><i>Free Shipping · Easy Returns · Best Price Guaranteed</i></p>
-                </div> 
+                </div>
+                
                 <div className="slider">
                 <Link to="/product">
                 <Slider {...settings} >  
