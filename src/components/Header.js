@@ -1,9 +1,10 @@
 import React from 'react';
 import Menu from './svg/bars-solid.svg';
 import Close from './svg/times-solid.svg';
-import CartIcon from './svg/shopping-cart-solid.svg';
 import {DataContext} from './Context';
-import {Link} from 'react-router-dom'; 
+import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 export class Header extends React.Component{
     static contextType = DataContext;
@@ -40,7 +41,7 @@ export class Header extends React.Component{
           <div className="nav-cart">
                 <span>{cart.length}</span>
                 <Link to="/cart">
-                <img src={CartIcon} alt="" width="20"></img>
+                <FontAwesomeIcon style={{color:"white"}} icon={faShoppingCart} />
                 </Link>   
           </div>
       </nav>

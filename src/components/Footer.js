@@ -12,15 +12,7 @@ export class Footer extends React.Component{
         <footer className="footer-distributed">       
                     <div className="footer-left">    
                     <img src="https://mir-s3-cdn-cf.behance.net/user/276/bd566661043453.597b8b4c68b4b.jpg" style={{width:"130px", border:"2px solid black"}}/>   
-                        <h3>Thai zoom<span>Cop</span></h3>  
-                        <p className="footer-links">
-                            <a href="#" className="link-1">Home</a>                            
-                            <a href="#">Blog</a>                      
-                            <a href="#">Pricing</a>                       
-                            <a href="#">About</a>                           
-                            <a href="#">Faq</a>                           
-                            <a href="#">Contact</a>
-                        </p>        
+                        <h3>Thai zoom<span>Cop</span></h3>        
                         <p className="footer-company-name">Design By Zoom Company © 2015</p>
                     </div>
         
