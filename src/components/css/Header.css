@@ -3,7 +3,10 @@ header {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden;   
+    overflow: hidden;
+    background: none;
+    position: absolute;
+    width: 100%;
 }
 
 header .logo{
