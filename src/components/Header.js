@@ -24,16 +24,15 @@ export class Header extends React.Component{
         <img src={Menu} alt="" width="20"/>
       </div>
       <div className="logo">
-        <Link to="/"><img src="https://mir-s3-cdn-cf.behance.net/user/276/bd566661043453.597b8b4c68b4b.jpg" style={{display:"inline-block",width:"130px"}}/></Link>
-        <p style={{display:"inline-block", paddingBottom:"20px"}}><Link to="/">Zoom's shoes</Link></p>
+        <a href="#" class="logo_name">Traidung</a>
       </div>
       <nav>
           <ul className={toggle ? "toggle" : ""}>
               <li><Link to="/home">Home</Link></li>
-              <li><Link to="/product">Product</Link></li>
+              <li><Link to="/product">Products</Link></li>
               <li><Link to="/contact">Contact</Link></li>              
               <li><Link to="/about">About</Link></li>
-              <li><Link to="/login">Login / Register</Link></li>
+              <li><Link to="/login">Login</Link></li>
               <li className="close" onClick={this.menuToggle}>
                   <img src={Close} alt="" width="20"/>
               </li>

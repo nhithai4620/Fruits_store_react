@@ -1,19 +1,25 @@
 header {
     min-height: 70px;
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     overflow: hidden;   
 }
 
+header .logo{
+    margin: 20px 70px;
+}
+
 header .logo a{
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
-    color:lightcoral;    
+    color:#f9b033;
+    font-weight: 800;  
 }
 
 header nav{
     display:flex;
+    margin: 0 50px;
 }
 
 nav ul li {
@@ -26,6 +32,7 @@ nav ul li a{
     text-transform: uppercase;
     color: black;
     padding: 0 15px;
+    font-size: 15px;
 }
 
 nav ul li a:hover{
