@@ -17,13 +17,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    z-index: -99;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.4);
+	z-index: 0;
 }
 
 .hero .btn{
@@ -82,6 +82,17 @@
 	border: 0;
 }
 
+.hero .btn2:hover{
+	background-color: #fff;
+	color: var(--main-color);
+}
+
+.hero .btn2:active{
+	transform: translateY(7px);
+	transition: 0.5s;
+	
+}
+
 .hero .right{
     top: 20%;
 	width: 38%;
@@ -94,20 +105,32 @@
 	transition: 0.5s ease-in-out;
 }
 
-.hero .icon{
-	position: absolute;
-	right: 86px;
-	bottom: 7%;
+
+.hero .fruit-control{
+	display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 98;
 }
-.hero .icon a{
-	padding: 10px;
-	font-size: 22px;
-	color: #2f2f2f;
-	transform: scale(.8);
-	cursor: pointer;
+
+.hero .fruit-control-item {
+    --size: 80px;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+    border-radius: 50%;
 }
-.hero .icon a:hover i{ 
-   transform: scale(1.5);
-   transition: all 0.3s ease-in-out;
+.hero .fruit-control img{
+	width: 60px;
+	height: 60px;
+	filter: saturate(150%) contrast(120%) hue-rotate(10deg) drop-shadow(1px 20px 10px rgba(0,0,0, 0.3));
 }
+
+.hero .fruit-control-item img:active{
+	transform: translateY(10px);
+	transition: 0.2s;
+}
+
 
