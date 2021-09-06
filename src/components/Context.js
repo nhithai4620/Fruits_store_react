@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-
+import OrangeSlice from "./assets/orange-slice.png";
+import AppleSlice from "./assets/apple-slice.png";
+import OrangeBg from "./assets/orange_bg.png";
+import AppleBg from "./assets/apple_bg.png";
 
 export const DataContext = React.createContext();
 
@@ -105,8 +108,19 @@ export class DataProvider extends Component {
             }
         ],
         cart: [],
-        total : 0
+        total : 0,
+        theme : {
+            theme_bg : OrangeBg,
+            theme_color : "#f9b033",
+            theme_img : OrangeSlice
+        }
     };
+
+    handleTheme = (e, color) =>{
+        var {theme} = this.context;
+        theme = color;
+        this.setState({theme,color});
+    }
 
     addCart = (id) => {
         const {products,cart} = this.state;
@@ -161,7 +175,7 @@ export class DataProvider extends Component {
         
     };
 
-    getTotal =() =>{
+    getTotal =() =>{ 
         const {cart} = this.state;
         const res = cart.reduce((prev, item) =>{
             return prev + (item.price * item.count)
@@ -189,10 +203,10 @@ export class DataProvider extends Component {
 
 
     render(){
-        const {products,cart,total} = this.state;
-        const {addCart, reduction,increase,remove,getTotal} = this;
+        const {products,cart,total,theme} = this.state;
+        const {addCart, reduction,increase,remove,getTotal,handleTheme} = this;
         return(
-            <DataContext.Provider value={{products,addCart,cart, reduction,increase,remove,total,getTotal}}>
+            <DataContext.Provider value={{products,addCart,cart,theme, reduction,increase,remove,total,getTotal,handleTheme}}>
                 {this.props.children}
             </DataContext.Provider>
         )

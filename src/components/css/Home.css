@@ -12,7 +12,6 @@
     width: 100%;
 	height: 100vh;
     position: relative;
-    background-image: url("../assets/orange_bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -45,7 +44,6 @@
 }
 
 .hero .bg{
-	background: var(--main-color);
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -85,12 +83,12 @@
 .hero .btn2:hover{
 	background-color: #fff;
 	color: var(--main-color);
+	transition: 0.5s;
 }
 
 .hero .btn2:active{
 	transform: translateY(7px);
-	transition: 0.5s;
-	
+	transition: 0.1s;	
 }
 
 .hero .right{
