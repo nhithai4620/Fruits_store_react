@@ -21,13 +21,6 @@ export class Home extends React.Component{
       theme_img : this.context.theme.theme_img
     }
 
-    setTheme (){
-      const {theme} = this.context;
-      console.log(theme);
-      if (theme === "green"){
-        this.setState({theme_bg: AppleBg});
-      }   
-    }
 
     render(){  
         return (
