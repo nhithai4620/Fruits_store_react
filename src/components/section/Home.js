@@ -17,6 +17,8 @@ import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
 import {DataContext} from '../Context';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 export class Home extends React.Component{
     static contextType = DataContext;
@@ -27,7 +29,26 @@ export class Home extends React.Component{
     }
 
 
-    render(){  
+    render(){
+        const responsive = {
+          superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
+          },
+          desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3
+          },
+          tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+          },
+          mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+          }
+        };
         return (
           <div id="home">
             <div className="hero" style={{
@@ -102,8 +123,30 @@ export class Home extends React.Component{
                   </ul>
                 </div>
               {/* end of class service infor */}
+              <Carousel   swipeable={false}
+                          draggable={false}
+                          showDots={true}
+                          responsive={responsive}
+                          ssr={true} // means to render carousel on server-side.
+                          infinite={true}
+                          autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                          autoPlaySpeed={3000}
+                          keyBoardControl={true}
+                          customTransition="all .5"
+                          transitionDuration={500}
+                          containerClass="carousel-container"
+                          removeArrowOnDeviceType={["tablet", "mobile"]}
+                          deviceType={this.props.deviceType}
+                          dotListClass="custom-dot-list-style"
+                          itemClass="carousel-item-padding-40-px">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+                <div>Item 5</div>
+                <div>Item 6</div>
+              </Carousel>;
             </div>
-
             {/* end of class main-container */}
           </div>
         );  

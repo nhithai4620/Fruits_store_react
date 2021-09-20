@@ -1,3 +1,5 @@
+
+
 #home{
     object-fit: cover;  
     width: 100%;
@@ -162,14 +164,6 @@
 	padding: 20px;
 	text-align: center;
 	color: var(--main-color);
-}
-
-.service-info li FontAwesomeIcon{
-	border: 2px solid var(--main-color);
-	padding: 5px;
-	border-radius: 50%;
-	font-size: 25px;
-	margin: 5px;
 }
 
 .service-info li h3{
