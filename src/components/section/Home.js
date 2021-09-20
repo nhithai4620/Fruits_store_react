@@ -10,6 +10,11 @@ import BananaControl from "../assets/banana_control.png";
 import StrawControl from "../assets/straw_control.png";
 import OrangeBg from "../assets/orange_bg.png";
 import AppleBg from "../assets/apple_bg.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShippingFast } from '@fortawesome/free-solid-svg-icons';
+import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
 import {DataContext} from '../Context';
 
@@ -63,6 +68,43 @@ export class Home extends React.Component{
 
             </div> 
             {/* end class hero */}
+            <div className="main-container">
+                <div className="service-info">
+                  <ul>
+                    <li>
+                      <Link>
+                      <FontAwesomeIcon style={{color:"orange",borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid orange"}} icon={faShippingFast} />
+                      </Link>  
+                      <h3>FREE SHIPPING</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </li>
+                    <li>
+                      <Link>
+                      <FontAwesomeIcon style={{color:"orange",borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid orange"}} icon={faExchangeAlt} />
+                      </Link>  
+                      <h3>EASY RETURN</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </li>
+                    <li>
+                      <Link>
+                      <FontAwesomeIcon style={{color:"orange",borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid orange"}} icon={faShieldAlt} />
+                      </Link>  
+                      <h3>SECURE PAYMENT</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </li>
+                    <li>
+                      <Link>
+                      <FontAwesomeIcon style={{color:"orange",borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid orange"}} icon={faHouseUser} />
+                      </Link> 
+                      <h3>24/7 SUPPORT</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </li>
+                  </ul>
+                </div>
+              {/* end of class service infor */}
+            </div>
+
+            {/* end of class main-container */}
           </div>
         );  
       } 
