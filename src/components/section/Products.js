@@ -13,8 +13,8 @@ export class Products extends React.Component{
         <div id="product">
             {
                 products.map(product =>(
-                    <div className="card" key={product._id}>
-                        <Link to={`/product/${product._id}`}>
+                    <div className="card" key={product.id}>
+                        <Link to={`/product/${product.id}`}>
                             <img src={product.src} alt="thai" className="img-product"/>
                         </Link>
                         <div className="content">

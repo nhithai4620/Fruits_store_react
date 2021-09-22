@@ -30,6 +30,7 @@ export class Home extends React.Component{
 
 
     render(){
+        const {products} = this.context;
         const responsive = {
           superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -125,12 +126,12 @@ export class Home extends React.Component{
               {/* end of class service infor */}
               <Carousel   swipeable={false}
                           draggable={false}
-                          showDots={true}
+                          showDots={false}
                           responsive={responsive}
                           ssr={true} // means to render carousel on server-side.
                           infinite={true}
                           autoPlay={this.props.deviceType !== "mobile" ? true : false}
-                          autoPlaySpeed={3000}
+                          autoPlaySpeed={2000}
                           keyBoardControl={true}
                           customTransition="all .5"
                           transitionDuration={500}
@@ -139,12 +140,27 @@ export class Home extends React.Component{
                           deviceType={this.props.deviceType}
                           dotListClass="custom-dot-list-style"
                           itemClass="carousel-item-padding-40-px">
-                <div>Item 1</div>
-                <div>Item 2</div>
-                <div>Item 3</div>
-                <div>Item 4</div>
-                <div>Item 5</div>
-                <div>Item 6</div>
+                {
+                  products.map(product =>(
+                    <div className="card" key={product.id}>
+                        <Link to={`/product/${product.id}`}>
+                        
+                            <img src={product.image} alt="thai" className="img-product"/>
+                        </Link>
+                        <div className="content">
+                            <h3>
+                                <Link to={`/product/${product.id}`}>{product.title}</Link>
+                            </h3>
+                            <span>${product.price}</span>
+                            <button onClick={()=>this.context.addCart(product.id)}>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                  ))
+                }
+
               </Carousel>;
             </div>
             {/* end of class main-container */}
