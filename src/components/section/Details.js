@@ -33,15 +33,14 @@ export class Details extends React.Component{
             {
                 product.map(item =>(
                     <div className="details" key={item._id}>
-                        <img src={item.src} alt="" style={{width:"100%",height:"100%"}}/>
+                        <img src={item.image} alt="" style={{width:"100%",height:"100%"}}/>
                         <div className="box">
                             <div className="row">
                                 <h2>{item.title}</h2>
                                 <span>${item.price}</span>
                             </div>
-                            <Colors colors={item.colors}/>
-                            <p>{item.description}</p>
-                            <p>{item.content}</p>
+                         
+          
                             <Link to="/cart" className="cart" onClick={()=> addCart(item._id)}>
                                 Add to cart
                             </Link>

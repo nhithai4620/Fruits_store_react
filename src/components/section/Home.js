@@ -35,11 +35,11 @@ export class Home extends React.Component{
           superLargeDesktop: {
             // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
-            items: 5
+            items: 7
           },
           desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3
+            items: 5
           },
           tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -124,6 +124,10 @@ export class Home extends React.Component{
                   </ul>
                 </div>
               {/* end of class service infor */}
+              <div class="slider-text">
+                <p>GRAB THE</p>
+                <h3>FEATURED PRODUCTS</h3>
+              </div>
               <Carousel   swipeable={false}
                           draggable={false}
                           showDots={false}
@@ -138,21 +142,20 @@ export class Home extends React.Component{
                           containerClass="carousel-container"
                           removeArrowOnDeviceType={["tablet", "mobile"]}
                           deviceType={this.props.deviceType}
-                          dotListClass="custom-dot-list-style"
                           itemClass="carousel-item-padding-40-px">
                 {
                   products.map(product =>(
-                    <div className="card" key={product.id}>
-                        <Link to={`/product/${product.id}`}>
+                    <div className="slide-item" key={product._id}>
+                        <Link to={`/product/${product._id}`}>
                         
-                            <img src={product.image} alt="thai" className="img-product"/>
+                            <img src={product.image_slider} alt="thai" className="img-product"/>
                         </Link>
                         <div className="content">
                             <h3>
-                                <Link to={`/product/${product.id}`}>{product.title}</Link>
+                                <Link to={`/product/${product._id}`}>{product.title}</Link>
                             </h3>
                             <span>${product.price}</span>
-                            <button onClick={()=>this.context.addCart(product.id)}>
+                            <button onClick={()=>this.context.addCart(product._id)}>
                                 Add to cart
                             </button>
                         </div>

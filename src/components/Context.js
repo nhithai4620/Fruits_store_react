@@ -10,104 +10,113 @@ export class DataProvider extends Component {
     state = {
         products: [
             {
-                "id": 1,
+                "_id": "1",
                 "title": "Apple",
                 "price": 12,
-                "image": "../assets/product-1.png",
-                "image_details": "../assets/product.png",
+                "image_slider": "./assets/apple-item.png",
+                "image": "./assets/product-1.png",
+                "image_details": "./assets/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
                 "color2": "#01e37f",
                 "description": "Apples are nutricious</li><li>Apples may be good for weight loss</li><li>Apples may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
                 ,"count" : 1
             },
-            // {
-            //     "id": 2,
-            //     "title": "Banana",
-            //     "price": 4,
-            //     "image": "../assets/banana/product-2.png",
-            //     "image_details": "../assets/banana/product.png",
-            //     "color1":  "radial-gradient(#eaebaa, #d5e001)",
-            //     "color2": "#faf330",
-            //     "description": "<li>Bananas are a rich source of carbs</li><li>Bananas are also a good source of other types of fiber</li><li> Aiding your gut and promoting healthy blood sugar levels.</li>" 
-            //     ,"count" : 1
-            // },
-            // {
-            //     "id": 3,
-            //     "title": "Strawberries",
-            //     "price": 16,
-            //     "image": "../assets/straw/product-3.png",
-            //     "image_details": "../assets/straw/product.png",
-            //     "color1": "radial-gradient(#f0b9b4, #f5623d)",
-            //     "color2": "#f12e1c",
-            //     "description": "<li>The tiny strawberry is packed with vitamin C, fiber, antioxidants, and more</li><li>These potent little packages protect your heart</li><li>Lower your blood pressure, and guard against cancer</li>" 
-            //     ,"count" : 1
-            // },
-            // {
-            //     "id": 4,
-            //     "title": "Watermelon",
-            //     "price": 5,
-            //     "image": "../assets/watermelon/product-4.png",
-            //     "image_details": "../assets/watermelon/product.png",
-            //     "color1": "radial-gradient(#ddebaa, #96e001)",
-            //     "color2": "#1ba42f",
-            //     "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
-            //     ,"count" : 1
-            // },
-            // {
-            //     "id": 5,
-            //     "title": "Orange",
-            //     "price": 7,
-            //     "image": "../assets/orange/product-5.png",
-            //     "image_details": "../assets/orange/product.png",
-            //     "color1": "radial-gradient(#ebd4aa, #e09201)",
-            //     "color2": "#faf330",
-            //     "description": "<li>Oranges are nutricious</li><li>Oranges may be good for weight loss</li><li>Oranges may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
-            //     ,"count" : 1
-            // },
-            // {
-            //     "id": 6,
-            //     "title": "Grape",
-            //     "price": 20,
-            //     "image": "../assets/grape/product-6.png",
-            //     "image_details": "../assets/grape/product.png",
-            //     "color1": "radial-gradient(#d383f8, #b81df0)",
-            //     "color2": "#9704b8",
-            //     "description": "<li>Grape are nutricious</li><li>Grape may be good for weight loss</li><li>Grape may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
-            //     ,"count" : 1
-            // },
-            // {
-            //     "id": 7,
-            //     "title": "Durian",
-            //     "price": 12,
-            //     "image": "../assets/durian/product-7.png",
-            //     "image_details": "../assets/durian/product.png",
-            //     "color1":  "radial-gradient(#eaebaa, #d5e001)",
-            //     "color2": "#faf330",
-            //     "description": "<li>Durian are a rich source of carbs</li><li>Durian are also a good source of other types of fiber</li><li> Aiding your gut and promoting healthy blood sugar levels.</li>" 
-            //     ,"count" : 1
-            // },
-            // {
-            //     "id": 8,
-            //     "title": "Blue berries",
-            //     "price": 23,
-            //     "image": "../assets/blue/product-8.png",
-            //     "image_details": "../assets/blue/product.png",
-            //     "color1": "radial-gradient(#5e8ce9, #0b55e9)",
-            //     "color2": "#5572cc",
-            //     "description": "<li>Blue berries are nutricious</li><li>Blue berries may be good for weight loss</li><li>Blue berries may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
-            //     ,"count" : 1
-            // },
-            // {
-            //     "id": 9,
-            //     "title": "Melon",
-            //     "price": 9,
-            //     "image": "../assets/melon/product-9.png",
-            //     "image_details": "../assets/melon/product.png",
-            //     "color1": "radial-gradient(#ddebaa, #96e001)",
-            //     "color2": "#086021",
-            //     "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
-            //     ,"count" : 1
-            // }
+            {
+                "_id": "2",
+                "title": "Banana",
+                "price": 4,
+                "image_slider": "./assets/banana-item.png",
+                "image": "../assets/banana/product-2.png",
+                "image_details": "../assets/banana/product.png",
+                "color1":  "radial-gradient(#eaebaa, #d5e001)",
+                "color2": "#faf330",
+                "description": "<li>Bananas are a rich source of carbs</li><li>Bananas are also a good source of other types of fiber</li><li> Aiding your gut and promoting healthy blood sugar levels.</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "3",
+                "title": "Strawberries",
+                "price": 16,
+                "image_slider": "./assets/straw-item.png",
+                "image": "../assets/straw/product-3.png",
+                "image_details": "../assets/straw/product.png",
+                "color1": "radial-gradient(#f0b9b4, #f5623d)",
+                "color2": "#f12e1c",
+                "description": "<li>The tiny strawberry is packed with vitamin C, fiber, antioxidants, and more</li><li>These potent little packages protect your heart</li><li>Lower your blood pressure, and guard against cancer</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "4",
+                "title": "Watermelon",
+                "price": 5,
+                "image_slider": "./assets/watermelon-item.png",
+                "image": "../assets/watermelon/product-4.png",
+                "image_details": "../assets/watermelon/product.png",
+                "color1": "radial-gradient(#ddebaa, #96e001)",
+                "color2": "#1ba42f",
+                "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "5",
+                "title": "Orange",
+                "price": 7,
+                "image_slider": "./assets/orange-item.png",
+                "image": "../assets/orange/product-5.png",
+                "image_details": "../assets/orange/product.png",
+                "color1": "radial-gradient(#ebd4aa, #e09201)",
+                "color2": "#faf330",
+                "description": "<li>Oranges are nutricious</li><li>Oranges may be good for weight loss</li><li>Oranges may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "6",
+                "title": "Grape",
+                "price": 20,
+                "image_slider": "./assets/orange-item.png",
+                "image": "../assets/grape/product-6.png",
+                "image_details": "../assets/grape/product.png",
+                "color1": "radial-gradient(#d383f8, #b81df0)",
+                "color2": "#9704b8",
+                "description": "<li>Grape are nutricious</li><li>Grape may be good for weight loss</li><li>Grape may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "7",
+                "title": "Durian",
+                "price": 12,
+                "image_slider": "./assets/durian-item.png",
+                "image": "../assets/durian/product-7.png",
+                "image_details": "../assets/durian/product.png",
+                "color1":  "radial-gradient(#eaebaa, #d5e001)",
+                "color2": "#faf330",
+                "description": "<li>Durian are a rich source of carbs</li><li>Durian are also a good source of other types of fiber</li><li> Aiding your gut and promoting healthy blood sugar levels.</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "8",
+                "title": "Blue berries",
+                "price": 23,
+                "image_slider": "./assets/blue-item.png",
+                "image": "../assets/blue/product-8.png",
+                "image_details": "../assets/blue/product.png",
+                "color1": "radial-gradient(#5e8ce9, #0b55e9)",
+                "color2": "#5572cc",
+                "description": "<li>Blue berries are nutricious</li><li>Blue berries may be good for weight loss</li><li>Blue berries may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "9",
+                "title": "Melon",
+                "price": 9,
+                "image_slider": "./assets/melon-item.png",
+                "image": "../assets/melon/product-9.png",
+                "image_details": "../assets/melon/product.png",
+                "color1": "radial-gradient(#ddebaa, #96e001)",
+                "color2": "#086021",
+                "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                ,"count" : 1
+            }
         ],
         cart: [],
         total : 0,
