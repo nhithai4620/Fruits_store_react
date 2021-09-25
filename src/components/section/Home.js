@@ -165,7 +165,23 @@ export class Home extends React.Component{
                 }
 
               </Carousel>;
+
+              
             </div>
+            <div className="last-container">
+                <div className="info">
+                  <br />
+                  <br />
+                  <h1>I am <span>Customer</span></h1>
+                  <h1>And I choose to buy the freshest fruit</h1>
+                  <p>Welcome to the Traidung fruits shop Where I trust the most<br /> There are many different kinds of fruit here that you need</p>
+                </div>
+                <div className="img-box">
+                  <img src="../assets/back1.png" className="back-img" />
+                  <img src="../assets/11.png" className="man-img" />
+                </div>
+            </div>
+
             {/* end of class main-container */}
           </div>
         );  

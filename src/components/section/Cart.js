@@ -1,7 +1,6 @@
 import React from 'react';
 import {DataContext} from '../Context';
 import {Link} from 'react-router-dom';
-import Colors from './Colors';
 import '../css/Details.css';
 import '../css/Cart.css';
 
@@ -18,17 +17,16 @@ export class Cart extends React.Component{
             return <h2 style={{textAlign: "center", paddingBottom:"155px"}}>Nothings Product</h2>
         }else{
         return (
-            <>
+            <div className="cart-details">
             {
                 cart.map(item =>(
                     <div className="details cart" key={item._id}>
-                        <img src={item.src} alt=""/>
+                        <img src={item.image} alt=""/>
                         <div className="box">
                             <div className="row">
                                 <h2>{item.title}</h2>
                                 <span>${item.price * item.count}</span>
                             </div>
-                            <Colors colors={item.colors}/>
                             <p>{item.description}</p>
                             <div className="amount">
                                 <button className="count" onClick={() =>reduction(item._id)} > - </button>
@@ -44,7 +42,7 @@ export class Cart extends React.Component{
                 <Link to="/payment">Payment</Link>
                 <h3>Total : ${total}</h3>
             </div>
-        </>
+        </div>
             );
         }
     }

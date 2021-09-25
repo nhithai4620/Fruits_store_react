@@ -73,7 +73,7 @@ export class DataProvider extends Component {
                 "_id": "6",
                 "title": "Grape",
                 "price": 20,
-                "image_slider": "./assets/orange-item.png",
+                "image_slider": "./assets/grape-item.png",
                 "image": "../assets/grape/product-6.png",
                 "image_details": "../assets/grape/product.png",
                 "color1": "radial-gradient(#d383f8, #b81df0)",
