@@ -146,10 +146,11 @@ export class Home extends React.Component{
                 {
                   products.map(product =>(
                     <div className="slide-item" key={product._id}>
-                        <Link to={`/product/${product._id}`}>
-                        
-                            <img src={product.image_slider} alt="thai" className="img-product"/>
-                        </Link>
+                        <div className="img-slider">
+                          <Link to={`/product/${product._id}`}>
+                              <img src={product.image_slider} alt="thai" className="img-product"/>
+                          </Link>
+                        </div>
                         <div className="content">
                             <h3>
                                 <Link to={`/product/${product._id}`}>{product.title}</Link>
@@ -163,11 +164,8 @@ export class Home extends React.Component{
                     
                   ))
                 }
-
               </Carousel>;
 
-              
-            </div>
             <div className="last-container">
                 <div className="info">
                   <br />
@@ -181,7 +179,7 @@ export class Home extends React.Component{
                   <img src="../assets/11.png" className="man-img" />
                 </div>
             </div>
-
+            </div>
             {/* end of class main-container */}
           </div>
         );  
