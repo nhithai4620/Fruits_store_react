@@ -14,8 +14,7 @@
 
 .padding-header{
     padding-top: 70px;
-    background-color: var(--main-color);
-    
+    background-color: var(--main-color); 
 }
 
 .card{
@@ -32,13 +31,26 @@
     box-shadow: none;
 }
 
+.products-image{
+    height: 350px;
+	width: 100%;
+	overflow: hidden;
+}
+
 .card img{
     max-width: 300px;
     width: 300px;
-    height: 100%;
-    max-height: 300px;
+    height: 350px;
+    max-height: 350px;
     display: block;
     object-fit: cover;
+    overflow: hidden;
+    transition: transform 2s ease;
+}
+.card img:hover{
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
 }
 .card h3{
     text-transform: uppercase;
@@ -75,7 +87,7 @@
 
 }
 .card button:hover{
-    background:#A9A9A9;
+    background: var(--main-color);
 }
 .card button:active{
     background:#A9A9A9;
@@ -88,6 +100,8 @@
     text-decoration: none;
 
 }
+
+
 
 
 
