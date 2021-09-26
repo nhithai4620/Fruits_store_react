@@ -10,7 +10,12 @@ export class Products extends React.Component{
     render(){
         const {products} = this.context;
         return(
+        <>
+        <div className="padding-header">
+
+        </div>
         <div id="product">
+            
             {
                 products.map(product =>(
                     <div className="card" key={product._id}>
@@ -30,6 +35,7 @@ export class Products extends React.Component{
                 ))
             }
         </div>
+        </>
         )
     }
 }
