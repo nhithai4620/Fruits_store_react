@@ -8,6 +8,7 @@
 }
 
 .details{
+    margin: 100px 0  100px 0;
     display: grid;
     grid-template-columns: 0.9fr 1fr;
     background-color: #fff;

@@ -148,7 +148,7 @@ export class Home extends React.Component{
                     <div className="slide-item" key={product._id}>
                         <div className="img-slider">
                           <Link to={`/product/${product._id}`}>
-                              <img src={product.image_slider} alt="thai" className="img-product"/>
+                              <img src={product.image1} alt="thai" className="img-product"/>
                           </Link>
                         </div>
                         <div className="content">

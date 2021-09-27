@@ -21,7 +21,7 @@ export class Products extends React.Component{
                     <div className="card" key={product._id}>
                         <div className="products-image">
                         <Link to={`/product/${product._id}`}>
-                            <img src={product.image} alt="thai" className="img-product"/>
+                            <img src={product.image2} alt="thai" className="img-product"/>
                         </Link>
                         </div>
                         
