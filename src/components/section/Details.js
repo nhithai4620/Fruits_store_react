@@ -40,7 +40,7 @@ export class Details extends React.Component{
                 <section className="details" key={item._id}>
                     <div className="product_photo">
                         <div className="photo_container">
-                        <div className="photo_main">
+                        <div className="photo_main" style={{background:`${item.color1}`}}>
                             <div className="controls">
                             <i className="fa fa-share-alt" />
                             <i className="fa fa-heart" />
