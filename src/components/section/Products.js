@@ -11,7 +11,7 @@ export class Products extends React.Component{
         const {products} = this.context;
         return(
         <>
-        <div className="padding-header">
+        <div className="padding-header" style={{background:`${this.context.theme}`}}>
 
         </div>
         <div id="product">

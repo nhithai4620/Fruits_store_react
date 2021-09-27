@@ -84,6 +84,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 15px 0;
+    transition: 0.5s;
 
 }
 .card button:hover{

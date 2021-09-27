@@ -120,17 +120,11 @@ export class DataProvider extends Component {
         ],
         cart: [],
         total : 0,
-        theme : {
-            theme_bg : OrangeBg,
-            theme_color : "#f9b033",
-            theme_img : OrangeSlice
-        }
+        theme : "#f9b033"
     };
 
-    handleTheme = (e, color) =>{
-        var {theme} = this.context;
-        theme = color;
-        this.setState({theme,color});
+    handleTheme = (color) =>{
+        this.setState({theme:color});
     }
 
     addCart = (id) => {
@@ -197,6 +191,7 @@ export class DataProvider extends Component {
     componentDidUpdate(){
         localStorage.setItem('dataCart',JSON.stringify(this.state.cart))
         localStorage.setItem('dataTotal',JSON.stringify(this.state.total))
+        localStorage.setItem('dataTheme',JSON.stringify(this.state.theme))
     };
 
     componentDidMount(){
@@ -208,6 +203,11 @@ export class DataProvider extends Component {
         const dataTotal = JSON.parse(localStorage.getItem('dataTotal'));
         if(dataTotal !== null){
             this.setState({total: dataTotal});
+        }
+
+        const dataTheme = JSON.parse(localStorage.getItem('dataTheme'));
+        if(dataTheme !== null){
+            this.setState({theme: dataTheme});
         }
     }
     

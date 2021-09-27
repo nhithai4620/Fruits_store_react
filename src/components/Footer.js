@@ -4,12 +4,15 @@ import FacebookIcon from './svg/facebook-square-brands.svg';
 import GithubIcon from './svg/github-square-brands.svg';
 import IgIcon from './svg/instagram-square-brands.svg';
 import LinkedinIcon from './svg/linkedin-brands.svg';
+import {DataContext} from './Context';
 
 export class Footer extends React.Component{
+    static contextType = DataContext;
   render() {
+    var color = this.context.theme;
     return (
-        <div id="footer">
-        <footer className="footer-distributed">       
+        <div id="footer" >
+        <footer className="footer-distributed" style={{background:`${color}`}}>       
                     <div className="footer-left">    
                     <img src="https://mir-s3-cdn-cf.behance.net/user/276/bd566661043453.597b8b4c68b4b.jpg" style={{width:"130px", border:"2px solid black"}}/>   
                         <h3>Thai zoom<span>Cop</span></h3>        

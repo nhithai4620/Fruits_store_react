@@ -22,12 +22,6 @@ import 'react-multi-carousel/lib/styles.css';
 
 export class Home extends React.Component{
     static contextType = DataContext;
-    state = {
-      theme_bg : this.context.theme.theme_bg,
-      theme_color : this.context.theme.theme_color,
-      theme_img : this.context.theme.theme_img
-    }
-
 
     render(){
         const {products} = this.context;
@@ -50,41 +44,68 @@ export class Home extends React.Component{
             items: 1
           }
         };
+
+        var color = this.context.theme;
+        var Bg = "../assets/apple_bg.png";
+        var Img = "../assets/apple-slice.png";
+        var colorImg = "../assets/back1.png";
+        if (color == "orange"){
+          Bg = "../assets/orange_bg.png";
+          Img = "../assets/orange-slice.png";
+          colorImg = "../assets/back1.png";
+        } else if (color == "yellow"){
+          Bg = "../assets/banana_bg.png";
+          Img = "../assets/banana-slice.png";
+          colorImg = "../assets/back2.png";
+        } else if (color == "#42cc14"){
+          Bg = "../assets/apple_bg.png";
+          Img = "../assets/apple-slice.png";
+          colorImg = "../assets/back3.png";
+        } else if (color == "#ff4000"){
+          Bg = "../assets/straw_bg.png";
+          Img = "../assets/straw-slice.png";
+          colorImg = "../assets/back.png";
+        }
+
+        
         return (
           <div id="home">
-            <div className="hero" style={{
-                backgroundImage: `url(${this.state.theme_bg})` 
-              }}>
-
+            <div className="hero" 
+            style={{
+                backgroundImage: `url(${Bg})` 
+              }}
+              >
               <div className="hero-overlay"></div>
 
               <div className="bg" style={{
-                backgroundColor: `${this.state.theme_color}`
+                backgroundColor: `${this.context.theme}`
               }}>
               </div>
 
-              <div className="content">
-                <span className="sell-logan">Eat Fresh<br /> Stay Healthy...</span>
-                <p className="sell-content">Orange is not just a tasty fruit, its more. Get to know the multiple health benefits of adding oranges in your daily diet</p>
-                <button className="btn btn2">Buy now</button>
+              <div className="content" >
+                <span className="sell-logan" style={{color:`${color}`}}>Eat Fresh<br /> Stay Healthy...</span>
+                <p className="sell-content" style={{color:`${color}`}}>Orange is not just a tasty fruit, its more. Get to know the multiple health benefits of adding oranges in your daily diet</p>
+                <button className="btn btn2" style={{backgroundColor:`${color}`}}>Buy now</button>
               </div>
 
               <div className="right">
-                <img src={this.state.theme_img}></img>
+                <img 
+                  src={Img}
+                ></img>
               </div>
 
               <div className="fruit-control">
                 <div className="fruit-control-item">
-                  <img id="apple" src={AppleControl} onClick={(e) => this.context.handleTheme(e,"green")} />
+                  <img id="apple" src={AppleControl} onClick={(e) => this.context.handleTheme("#42cc14")} />
                 </div>
                 <div className="fruit-control-item">
-                  <img id="orange" src={OrangeControl} onClick={(e) => this.context.handleTheme(e,"orange")} />
+                  <img id="orange" src={OrangeControl} onClick={(e) => this.context.handleTheme("orange")} />
                 </div>
                 <div className="fruit-control-item">
-                  <img id="banana" src={BananaControl} onClick={(e) => this.context.handleTheme(e,"yellow")}/>
+                  <img id="banana" src={BananaControl} onClick={(e) => this.context.handleTheme("yellow")}/>
                 </div>
                 <div className="fruit-control-item">
-                  <img id="straw" src={StrawControl}  onClick={(e) => this.context.handleTheme(e,"red")}/>
+                  <img id="straw" src={StrawControl}  onClick={(e) => this.context.handleTheme("#ff4000")}/>
                 </div>
               </div>
 
@@ -92,41 +113,41 @@ export class Home extends React.Component{
             {/* end class hero */}
             <div className="main-container">
                 <div className="service-info">
-                  <ul>
+                  <ul style={{color:`${color}`}}>
                     <li>
                       <Link>
-                      <FontAwesomeIcon style={{color:"orange",borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid orange"}} icon={faShippingFast} />
+                      <FontAwesomeIcon style={{color:`${color}`,borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid", borderColor:`${color}`}} icon={faShippingFast} />
                       </Link>  
-                      <h3>FREE SHIPPING</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                      <h3 style={{color:`${color}`}}>FREE SHIPPING</h3>
+                      <p style={{color:`${color}`}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </li>
                     <li>
                       <Link>
-                      <FontAwesomeIcon style={{color:"orange",borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid orange"}} icon={faExchangeAlt} />
+                      <FontAwesomeIcon style={{color:`${color}`,borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid ",borderColor:`${color}`}} icon={faExchangeAlt} />
                       </Link>  
-                      <h3>EASY RETURN</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                      <h3 style={{color:`${color}`}}>EASY RETURN</h3>
+                      <p style={{color:`${color}`}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </li>
                     <li>
                       <Link>
-                      <FontAwesomeIcon style={{color:"orange",borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid orange"}} icon={faShieldAlt} />
+                      <FontAwesomeIcon style={{color:`${color}`,borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid ",borderColor:`${color}`}} icon={faShieldAlt} />
                       </Link>  
-                      <h3>SECURE PAYMENT</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                      <h3 style={{color:`${color}`}}>SECURE PAYMENT</h3>
+                      <p style={{color:`${color}`}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </li>
                     <li>
                       <Link>
-                      <FontAwesomeIcon style={{color:"orange",borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid orange"}} icon={faHouseUser} />
+                      <FontAwesomeIcon style={{color:`${color}`,borderRadius: '50%',margin:"5px",padding:"5px",fontSize:"25px",border:" 2px solid",borderColor:`${color}`}} icon={faHouseUser} />
                       </Link> 
-                      <h3>24/7 SUPPORT</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                      <h3 style={{color:`${color}`}}>24/7 SUPPORT</h3>
+                      <p style={{color:`${color}`}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </li>
                   </ul>
                 </div>
               {/* end of class service infor */}
               <div class="slider-text">
                 <p>GRAB THE</p>
-                <h3>FEATURED PRODUCTS</h3>
+                <h3 style={{color:`${color}`}}>FEATURED PRODUCTS</h3>
               </div>
               <Carousel   swipeable={false}
                           draggable={false}
@@ -156,7 +177,7 @@ export class Home extends React.Component{
                                 <Link to={`/product/${product._id}`}>{product.title}</Link>
                             </h3>
                             <span>${product.price}</span>
-                            <button onClick={()=>this.context.addCart(product._id)}>
+                            <button style={{background:`${color}`}} onClick={()=>this.context.addCart(product._id)}>
                                 Add to cart
                             </button>
                         </div>
@@ -170,12 +191,12 @@ export class Home extends React.Component{
                 <div className="info">
                   <br />
                   <br />
-                  <h1>I am <span>Customer</span></h1>
+                  <h1>I am <span style={{color:`${color}`}}>Customer</span></h1>
                   <h1>And I choose to buy the freshest fruit</h1>
                   <p>Welcome to the Traidung fruits shop Where I trust the most<br /> There are many different kinds of fruit here that you need</p>
                 </div>
                 <div className="img-box">
-                  <img src="../assets/back1.png" className="back-img" />
+                  <img src={colorImg} className="back-img" />
                   <img src="../assets/11.png" className="man-img" />
                 </div>
             </div>

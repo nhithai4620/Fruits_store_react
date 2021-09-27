@@ -19,6 +19,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+	transition: 0.5s;
 }
 
 .hero-overlay {
@@ -30,7 +31,6 @@
 
 .hero .btn{
 	background: #fff;
-	color: var(--main-color);
 	font-size: 17px;
 	font-weight: 500;
 	padding: 6px 12px;
@@ -85,8 +85,8 @@
 
 .hero .btn2:hover{
 	background-color: #fff;
-	color: var(--main-color);
 	transition: 0.5s;
+	transform: translateY(3px);
 }
 
 .hero .btn2:active{
@@ -104,6 +104,7 @@
 .right img{
 	width: 500px;
 	transition: 0.5s ease-in-out;
+	transition: 0.5s;
 }
 
 
@@ -210,11 +211,12 @@
 }
 
 .slide-item h3 a:hover{
-    color:var(--main-color);
+    color: black;
+	background-color: #ffff;
 }
 
 .slide-item span{
-    color: var(--main-color);
+    color: crimson;
 }
 .slide-item p{
     margin: 10px 0;
