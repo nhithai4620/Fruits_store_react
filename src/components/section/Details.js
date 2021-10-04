@@ -24,7 +24,6 @@ export class Details extends React.Component{
         this.getProduct();
     }
 
-
     render(){
         const {product} = this.state;
         const {addCart} = this.context;
@@ -83,22 +82,6 @@ export class Details extends React.Component{
                         </Link>
                     </div>
                     </section>
-
-
-                    // <div className="details" key={item._id}>
-                    //     <img src={item.image} alt="" style={{width:"100%",height:"100%"}}/>
-                    //     <div className="box">
-                    //         <div className="row">
-                    //             <h2>{item.title}</h2>
-                    //             <span>${item.price}</span>
-                    //         </div>
-                         
-          
-                    //         <Link to="/cart" className="cart" onClick={()=> addCart(item._id)}>
-                    //             Add to cart
-                    //         </Link>
-                    //     </div>
-                    // </div>
                 ))
             }
             </div>
