@@ -8,20 +8,30 @@
     text-align: center;
     color: black;
     padding: 64px 0 120px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
+
+
 .contact h1 {
   font-size: 2.5em;
   margin: 0;
   padding: 0;
   padding-bottom: 12px;
   font-weight: normal;
+  color: #ffff;
+  
 }
 .contact-text {
   padding-top: 16px;
   width: 49%;
+  color: #ffff;
 }
 .contact-form {
   width: 49%;
+  z-index: 1;
 }
 .contact-form input[type=text], .contact-form textarea {
   width: 65%;

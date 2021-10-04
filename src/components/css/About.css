@@ -1,18 +1,43 @@
-.about {
-    height: 200px;
-}
 
 .padding-header{
     padding-top: 75px;
     background-color: var(--main-color); 
 }
 
-.about h3{
-    padding:20px;
-    font-size: 20px;
+.about{
+    
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgba(248, 235, 192, 0.571);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
-
-.about p{
-    padding: 10px 20px;
-    font-style: italic;
+.about-content{
+    flex: 50%;
+    padding: 5%;
+    z-index: 1;          
+}
+.about-content h3{
+    color: #f9b033;
+}
+.about-content p{
+    font-weight: 500;
+   letter-spacing: 1px;
+   line-height: 30px;
+   color: rgb(88, 85, 85);
+   margin-top: 5%;
+}
+.about-img{
+    flex: 50%;
+    height: 100%;
+    padding-top: 140px;
+    z-index: 999;
+}
+.about-img img{
+    height: 500px;
+    width: 100%;
 }
