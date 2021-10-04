@@ -1,9 +1,16 @@
 import React from 'react';
 import '../css/Contact.css';
+import {DataContext} from '../Context';
 export class Contact extends React.Component{
+    static contextType = DataContext;
     render(){
         const {colors} = this.props;
+        
         return (
+            <>
+            <div className="padding-header" style={{background:`${this.context.theme}`}}>
+
+            </div>    
             <div className="contact">
                 <div className="contact-text" id="contact">
                 <h1>Contact</h1>
@@ -17,7 +24,8 @@ export class Contact extends React.Component{
                         <input type="submit" value="Submit" className="button"/>
                     </form>
                 </div>
-                </div>        
+                </div>
+            </>      
         );
     }
 }
