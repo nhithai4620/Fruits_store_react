@@ -23,7 +23,6 @@ export class Home extends React.Component{
         const {products} = this.context;
         const responsive = {
           superLargeDesktop: {
-            // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
             items: 7
           },
@@ -45,6 +44,7 @@ export class Home extends React.Component{
         var Bg = "../assets/apple_bg.png";
         var Img = "../assets/apple-slice.png";
         var colorImg = "../assets/back1.png";
+
         if (color == "orange"){
           Bg = "../assets/orange_bg.png";
           Img = "../assets/orange-slice.png";
@@ -62,8 +62,7 @@ export class Home extends React.Component{
           Img = "../assets/straw-slice.png";
           colorImg = "../assets/back.png";
         }
-
-        
+     
         return (
           <div id="home">
             <div className="hero" 
@@ -72,7 +71,6 @@ export class Home extends React.Component{
               }}
               >
               <div className="hero-overlay"></div>
-
               <div className="bg" style={{
                 backgroundColor: `${this.context.theme}`
               }}>
@@ -104,7 +102,6 @@ export class Home extends React.Component{
                   <img id="straw" src={StrawControl}  onClick={(e) => this.context.handleTheme("#ff4000")}/>
                 </div>
               </div>
-
             </div> 
             {/* end class hero */}
             <div className="main-container">
@@ -149,7 +146,7 @@ export class Home extends React.Component{
                           draggable={false}
                           showDots={false}
                           responsive={responsive}
-                          ssr={true} // means to render carousel on server-side.
+                          ssr={true}
                           infinite={true}
                           autoPlay={this.props.deviceType !== "mobile" ? true : false}
                           autoPlaySpeed={2000}
