@@ -116,6 +116,42 @@ export class DataProvider extends Component {
                 "color2": "#086021",
                 "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
                 ,"count" : 1
+            },
+            {
+                "_id": "10",
+                "title": "Melon",
+                "price": 9,
+                "image1": "./assets/melon-item.png",
+                "image2": "../assets/melon/product-9.png",
+                "image3": "../assets/melon/product.png",
+                "color1": "radial-gradient(#ddebaa, #96e001)",
+                "color2": "#086021",
+                "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "11",
+                "title": "Melon",
+                "price": 9,
+                "image1": "./assets/melon-item.png",
+                "image2": "../assets/melon/product-9.png",
+                "image3": "../assets/melon/product.png",
+                "color1": "radial-gradient(#ddebaa, #96e001)",
+                "color2": "#086021",
+                "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "12",
+                "title": "Melon",
+                "price": 9,
+                "image1": "./assets/melon-item.png",
+                "image2": "../assets/melon/product-9.png",
+                "image3": "../assets/melon/product.png",
+                "color1": "radial-gradient(#ddebaa, #96e001)",
+                "color2": "#086021",
+                "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                ,"count" : 1
             }
         ],
         cart: [],
