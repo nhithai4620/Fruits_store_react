@@ -3,9 +3,7 @@
     padding-top: 75px;
     background-color: var(--main-color); 
 }
-
 .about{
-    
     height: 100%;
     display: flex;
     justify-content: center;
@@ -30,6 +28,7 @@
    line-height: 30px;
    color: rgb(88, 85, 85);
    margin-top: 5%;
+   font-weight: 500;
 }
 .about-img{
     flex: 50%;
