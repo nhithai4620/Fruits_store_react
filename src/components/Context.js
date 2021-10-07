@@ -150,7 +150,7 @@ export class DataProvider extends Component {
                 "image3": "../assets/kiwi/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
                 "color2": "#086021",
-                "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                "description": "is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
                 ,"count" : 1
             }
         ],
