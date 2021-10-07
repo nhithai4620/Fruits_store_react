@@ -1,7 +1,6 @@
 import React from 'react';
 import {DataContext} from '../Context';
 import {Link} from 'react-router-dom';
-
 import '../css/Details.css';
 
 export class Details extends React.Component{
@@ -30,12 +29,11 @@ export class Details extends React.Component{
         return(            
         <>
             <div className="padding-header">
-
+                {/* padding part for header */}
             </div>
             <div style={{display:"grid"}}>
             {
                 product.map(item =>(
-
                 <section className="details" key={item._id}>
                     <div className="product_photo">
                         <div className="photo_container">
