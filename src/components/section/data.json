@@ -1,0 +1,63 @@
+{
+    "leadingText": "All about",
+    "slides": [
+      {
+        "introline": "snakes",
+        "id": "snakes",
+        "content": {
+          "image": "https://via.placeholder.com/400x200?text=Snakes",
+          "copy": "Snakes ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
+        },
+        "color":"red"
+      },
+      {
+        "introline": "cats",
+        "id": "cats",
+        "content": {
+          "image": "https://via.placeholder.com/400x200?text=Cats",
+          "copy": "Cats ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
+        },
+        "color":"yellow"
+      },
+      {
+        "introline": "giraffes",
+        "id": "giraffes",
+        "content": {
+          "image": "https://via.placeholder.com/400x200?text=Giraffes",
+          "copy": "Giraffes ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
+        },
+        "color":"green"
+      },
+      {
+        "introline": "owls",
+        "id": "owls",
+        "content": {
+          "image": "https://via.placeholder.com/400x200?text=Owls",
+          "copy": "Owls ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
+        },
+        "blue":"blue"
+        
+      },
+      {
+        "introline": "dog",
+        "id": "dog",
+        "content": {
+          "image": "https://via.placeholder.com/400x200?text=Owls",
+          "copy": "Owls ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
+        },
+        "blue":"brown"
+        
+      },
+      {
+        "introline": "cat",
+        "id": "cat",
+        "content": {
+          "image": "https://via.placeholder.com/400x200?text=Owls",
+          "copy": "Owls ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
+        },
+        "blue":"black"
+        
+      }
+    ]
+  }
+  

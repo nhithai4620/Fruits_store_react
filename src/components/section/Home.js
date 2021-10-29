@@ -15,6 +15,8 @@ import {Link} from "react-router-dom";
 import {DataContext} from '../Context';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import VerticalCarousel from "./VerticalCarousel";
+import data from "./data.json";
 
 export class Home extends React.Component{
     static contextType = DataContext;
@@ -179,6 +181,8 @@ export class Home extends React.Component{
                   ))
                 }
               </Carousel>;
+            
+            <VerticalCarousel data={data.slides} leadingText={data.leadingText} />
 
             <div className="last-container">
                 <div className="info">
