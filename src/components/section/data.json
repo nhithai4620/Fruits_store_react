@@ -2,61 +2,28 @@
     "leadingText": "All about",
     "slides": [
       {
-        "introline": "snakes",
-        "id": "snakes",
-        "content": {
-          "image": "https://via.placeholder.com/400x200?text=Snakes",
-          "copy": "Snakes ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
-        },
+        "introline": "Lavada Love",
+        "id": "Lavada Love",
+        "image": "../assets/photo-1.jpg",
+        "color":"purple"
+      },
+      {
+        "introline": "Redness Luck",
+        "id": "Redness Luck",
+        "image": "../assets/photo-2.jpg",
         "color":"red"
       },
       {
-        "introline": "cats",
-        "id": "cats",
-        "content": {
-          "image": "https://via.placeholder.com/400x200?text=Cats",
-          "copy": "Cats ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
-        },
-        "color":"yellow"
+        "introline": "Yellow Luck",
+        "id": "Yellow Luck",
+        "image": "../assets/photo-3.jpg",
+        "color":"rgb(235, 208, 89)"
       },
       {
-        "introline": "giraffes",
-        "id": "giraffes",
-        "content": {
-          "image": "https://via.placeholder.com/400x200?text=Giraffes",
-          "copy": "Giraffes ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
-        },
-        "color":"green"
-      },
-      {
-        "introline": "owls",
-        "id": "owls",
-        "content": {
-          "image": "https://via.placeholder.com/400x200?text=Owls",
-          "copy": "Owls ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
-        },
-        "blue":"blue"
-        
-      },
-      {
-        "introline": "dog",
-        "id": "dog",
-        "content": {
-          "image": "https://via.placeholder.com/400x200?text=Owls",
-          "copy": "Owls ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
-        },
-        "blue":"brown"
-        
-      },
-      {
-        "introline": "cat",
-        "id": "cat",
-        "content": {
-          "image": "https://via.placeholder.com/400x200?text=Owls",
-          "copy": "Owls ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus."
-        },
-        "blue":"black"
-        
+        "introline": "Green life",
+        "id": "Green life",
+        "image": "../assets/photo-4.jpg",
+        "color":"green"  
       }
     ]
   }

@@ -7,6 +7,7 @@ import "../css/Carousel.css";
 
 
 const VerticalCarousel = ({ data, leadingText }) => {
+    
     const [activeIndex, setActiveIndex] = useState(0);
   
     // Used to determine which items appear above the active item
@@ -111,12 +112,10 @@ const VerticalCarousel = ({ data, leadingText }) => {
               <Next />
             </button>
           </div>
-          <div className="content">
+          <div className="content" >
             <img
-              src={data[activeIndex].content.image}
-              alt={data[activeIndex].content.introline}
+              src={data[activeIndex].image}
             />
-            <p>{data[activeIndex].content.copy}</p>
           </div>
         </section>
       </div>

@@ -27,7 +27,7 @@ img {
 
 .outer-container {
     max-width: 1500px;
-    height: 500px;
+    height: 100%;
     margin: auto;
     display: flex;
     border: 1px solid #ccc;
@@ -38,13 +38,14 @@ img {
 
 .outer-container > div {
     flex: 1;
-    padding: 20px;
 }
 
 .outer-container .carousel-wrapper {
     background: var(--orange);
     display: flex;
     flex-direction: column;
+    padding: 20px;
+
 }
 
 .outer-container .carousel-wrapper p,
@@ -64,6 +65,7 @@ img {
     align-items: center;
     height: 100%;
     margin-right: 6px;
+    margin-left: 100px;
 }
 
 .carousel {
@@ -84,6 +86,8 @@ img {
     border: 2px solid var(--white);
 }
 
+
+
 .carousel-button svg {
     height: 26px;
     width: 26px;
@@ -101,8 +105,8 @@ img {
 
 .carousel-inner {
     position: relative;
-    max-height: 250px;
-    height: 250px;
+    max-height: 550px;
+    height: 550px;
 }
 
 .carousel-inner::before,
@@ -111,8 +115,21 @@ img {
     z-index: 1;
     position: absolute;
     width: 100%;
-    height: 110px;
+    height: 150px;
     pointer-events: none;
+}
+
+
+.content img{
+    width: 100%;
+	height: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+	transition: 0.5s;
+    padding: 0;
 }
 
 /* .carousel-inner::before {
@@ -140,7 +157,8 @@ img {
     padding: 0;
     margin: 0;
     opacity: 0;
-    top: 112px;
+    top: 260px;
+    left: 130px;
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
