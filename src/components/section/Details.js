@@ -28,10 +28,10 @@ export class Details extends React.Component{
         const {addCart} = this.context;
         return(            
         <>
-            <div className="padding-header">
+            <div className="padding-header" style={{backgroundColor:`${this.context.theme}`}}>
                 {/* padding part for header */}
             </div>
-            <div style={{display:"grid"}}>
+            <div className='detail-container' style={{display:"grid"}}>
             {
                 product.map(item =>(
                 <section className="details" key={item._id}>

@@ -5,10 +5,10 @@ export class Contact extends React.Component{
     static contextType = DataContext;
     render(){
         var color = this.context.theme;
-        var Bg = "../assets/apple_bg.png";
+        var Bg = "";
         if (color == "orange"){
           Bg = "../assets/orange_bg.png";
-        } else if (color == "yellow"){
+        } else if (color == "rgb(233, 220, 30)"){
           Bg = "../assets/banana_bg.png";
         } else if (color == "#42cc14"){
           Bg = "../assets/apple_bg.png";

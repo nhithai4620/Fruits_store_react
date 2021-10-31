@@ -131,13 +131,13 @@ export class DataProvider extends Component {
             },
             {
                 "_id": "11",
-                "title": "Melon",
+                "title": "Dragonfruit",
                 "price": 9,
                 "image1": "./assets/dragonfruit/product-10.png",
                 "image2": "../assets/dragonfruit/product-10.png",
                 "image3": "../assets/dragonfruit/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
-                "color2": "#086021",
+                "color2": "#f12e1c",
                 "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
                 ,"count" : 1
             },

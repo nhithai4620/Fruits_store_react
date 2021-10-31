@@ -51,7 +51,7 @@ export class Home extends React.Component{
           Bg = "../assets/orange_bg.png";
           Img = "../assets/orange-slice.png";
           colorImg = "../assets/back1.png";
-        } else if (color == "yellow"){
+        } else if (color == "rgb(233, 220, 30)"){
           Bg = "../assets/banana_bg.png";
           Img = "../assets/banana-slice.png";
           colorImg = "../assets/back2.png";
@@ -98,7 +98,7 @@ export class Home extends React.Component{
                   <img id="orange" src={OrangeControl} onClick={(e) => this.context.handleTheme("orange")} />
                 </div>
                 <div className="fruit-control-item">
-                  <img id="banana" src={BananaControl} onClick={(e) => this.context.handleTheme("yellow")}/>
+                  <img id="banana" src={BananaControl} onClick={(e) => this.context.handleTheme("rgb(233, 220, 30)")}/>
                 </div>
                 <div className="fruit-control-item">
                   <img id="straw" src={StrawControl}  onClick={(e) => this.context.handleTheme("#ff4000")}/>

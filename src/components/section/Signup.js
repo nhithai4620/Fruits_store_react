@@ -1,10 +1,17 @@
 import React from 'react';
 import '../css/Signup.css';
 import {Link} from 'react-router-dom';
+import {DataContext} from '../Context';
+
 
 export class Signup extends React.Component{
+    static contextType = DataContext;
     render(){
         return (
+            <>
+            <div className="padding-header" style={{backgroundColor:`${this.context.theme}`}}>
+                {/* padding part for header */}
+            </div>
             <div className="signup">
                 <h1>Sign up</h1>
                 <form method="post">
@@ -39,6 +46,7 @@ export class Signup extends React.Component{
                     </div>
                 </form>
             </div>
+            </>
         );
     }
 }
