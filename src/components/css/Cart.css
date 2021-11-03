@@ -1,11 +1,41 @@
-.cart-details{
-    width: 100%;
-    padding-top: 70px;
+.padding-header{
+    padding-top: 75px;
 }
 
+.cart-details{
+    width: 80%;
+    margin: auto;
+}
+.Cart-content{
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 40px;
+}
 section .cart{
     position: relative;
     border: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    margin: 30px;
+    box-shadow: 2px 8px 20px #ddd;
+}
+
+.row span{
+    color: crimson;
+}
+
+.amount{
+    margin-top:30px;
+}
+
+.box{
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.cart img{
+    width: 300px;
 }
 
 .amount span{
@@ -45,8 +75,24 @@ section .cart{
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 10px 25px;
+    margin: 30px;
 }
 .total h3{
     margin-right: 50px;
     color: crimson;
 }
+
+.emptyproduct{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.emptyproduct h3{
+    font-size: 2rem;
+    line-height: 2rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+

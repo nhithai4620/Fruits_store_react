@@ -5,7 +5,14 @@ import '../css/Products.css';
 
 
 export class Products extends React.Component{
-
+    constructor() {
+        super();
+        this.state = {
+          currentPage: 1,
+          productsPerPage: 9
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
     static contextType = DataContext;
     render(){
         const {products} = this.context;
