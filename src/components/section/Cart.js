@@ -39,7 +39,7 @@ export class Cart extends React.Component{
             {
                 cart.map(item =>(
                     <div className="cart" key={item._id} style={{background:`${item.color1}`}}>
-                        <img src={item.image3} alt=""/>
+                        <img src={item.image2} alt=""/>
                         <div className="box">
                             <div className="row">
                                 <h2>{item.title}</h2>

@@ -194,7 +194,7 @@ export class Home extends React.Component{
                 </div>
                 <div className="img-box">
                   <img src={colorImg} className="back-img" />
-                  <img src="../assets/11.png" className="man-img" />
+                  <img src="../assets/girl.png" className="man-img" />
                 </div>
             </div>
             </div>

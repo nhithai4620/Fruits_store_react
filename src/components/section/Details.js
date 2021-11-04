@@ -42,7 +42,7 @@ export class Details extends React.Component{
                             <i className="fa fa-share-alt" />
                             <i className="fa fa-heart" />
                             </div>
-                            <img id="apple-img" src={item.image3} alt />
+                            <img id="apple-img" src={item.image2} alt />
                         </div>
                         <div className="photo-ablum">
                             <ul>

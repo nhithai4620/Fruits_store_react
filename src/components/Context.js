@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import OrangeSlice from "./assets/orange-slice.png";
-import AppleSlice from "./assets/apple-slice.png";
-import OrangeBg from "./assets/orange_bg.png";
-import AppleBg from "./assets/apple_bg.png";
+
 
 export const DataContext = React.createContext();
 
@@ -14,8 +11,7 @@ export class DataProvider extends Component {
                 "title": "Apple",
                 "price": 12,
                 "image1": "./assets/apple-item.png",
-                "image2": "./assets/product-1.png",
-                "image3": "../assets/apple/product.png",
+                "image2": "../assets/apple/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
                 "color2": "#01e37f",
                 "description": "Apples are nutricious</li><li>Apples may be good for weight loss</li><li>Apples may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
@@ -26,8 +22,7 @@ export class DataProvider extends Component {
                 "title": "Banana",
                 "price": 4,
                 "image1": "./assets/banana-item.png",
-                "image2": "../assets/banana/product-2.png",
-                "image3": "../assets/banana/product.png",
+                "image2": "../assets/banana/product.png",
                 "color1":  "radial-gradient(#eaebaa, #d5e001)",
                 "color2": "#faf330",
                 "description": "<li>Bananas are a rich source of carbs</li><li>Bananas are also a good source of other types of fiber</li><li> Aiding your gut and promoting healthy blood sugar levels.</li>" 
@@ -38,8 +33,7 @@ export class DataProvider extends Component {
                 "title": "Strawberries",
                 "price": 16,
                 "image1": "./assets/straw-item.png",
-                "image2": "../assets/straw/product-3.png",
-                "image3": "../assets/straw/product.png",
+                "image2": "../assets/straw/product.png",
                 "color1": "radial-gradient(#f0b9b4, #f5623d)",
                 "color2": "#f12e1c",
                 "description": "<li>The tiny strawberry is packed with vitamin C, fiber, antioxidants, and more</li><li>These potent little packages protect your heart</li><li>Lower your blood pressure, and guard against cancer</li>" 
@@ -50,8 +44,7 @@ export class DataProvider extends Component {
                 "title": "Watermelon",
                 "price": 5,
                 "image1": "./assets/watermelon-item.png",
-                "image2": "../assets/watermelon/product-4.png",
-                "image3": "../assets/watermelon/product.png",
+                "image2": "../assets/watermelon/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
                 "color2": "#1ba42f",
                 "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
@@ -62,8 +55,7 @@ export class DataProvider extends Component {
                 "title": "Orange",
                 "price": 7,
                 "image1": "./assets/orange-item.png",
-                "image2": "../assets/orange/product-5.png",
-                "image3": "../assets/orange/product.png",
+                "image2": "../assets/orange/product.png",
                 "color1": "radial-gradient(#ebd4aa, #e09201)",
                 "color2": "#faf330",
                 "description": "<li>Oranges are nutricious</li><li>Oranges may be good for weight loss</li><li>Oranges may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
@@ -74,8 +66,7 @@ export class DataProvider extends Component {
                 "title": "Grape",
                 "price": 20,
                 "image1": "./assets/grape-item.png",
-                "image2": "../assets/grape/product-6.png",
-                "image3": "../assets/grape/product.png",
+                "image2": "../assets/grape/product.png",
                 "color1": "radial-gradient(#d383f8, #b81df0)",
                 "color2": "#9704b8",
                 "description": "<li>Grape are nutricious</li><li>Grape may be good for weight loss</li><li>Grape may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
@@ -86,8 +77,7 @@ export class DataProvider extends Component {
                 "title": "Durian",
                 "price": 12,
                 "image1": "./assets/durian-item.png",
-                "image2": "../assets/durian/product-7.png",
-                "image3": "../assets/durian/product.png",
+                "image2": "../assets/durian/product.png",
                 "color1":  "radial-gradient(#eaebaa, #d5e001)",
                 "color2": "#faf330",
                 "description": "<li>Durian are a rich source of carbs</li><li>Durian are also a good source of other types of fiber</li><li> Aiding your gut and promoting healthy blood sugar levels.</li>" 
@@ -98,8 +88,7 @@ export class DataProvider extends Component {
                 "title": "Blue berries",
                 "price": 23,
                 "image1": "./assets/blue-item.png",
-                "image2": "../assets/blue/product-8.png",
-                "image3": "../assets/blue/product.png",
+                "image2": "../assets/blue/product.png",
                 "color1": "radial-gradient(#5e8ce9, #0b55e9)",
                 "color2": "#5572cc",
                 "description": "<li>Blue berries are nutricious</li><li>Blue berries may be good for weight loss</li><li>Blue berries may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
@@ -110,8 +99,7 @@ export class DataProvider extends Component {
                 "title": "Melon",
                 "price": 9,
                 "image1": "./assets/melon-item.png",
-                "image2": "../assets/melon/product-9.png",
-                "image3": "../assets/melon/product.png",
+                "image2": "../assets/melon/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
                 "color2": "#086021",
                 "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
@@ -122,8 +110,7 @@ export class DataProvider extends Component {
                 "title": "Avocado",
                 "price": 9,
                 "image1": "./assets/avocado/product-11.png",
-                "image2": "../assets/avocado/product-11.png",
-                "image3": "../assets/avocado/product.png",
+                "image2": "../assets/avocado/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
                 "color2": "#086021",
                 "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
@@ -134,8 +121,7 @@ export class DataProvider extends Component {
                 "title": "Dragonfruit",
                 "price": 9,
                 "image1": "./assets/dragonfruit/product-10.png",
-                "image2": "../assets/dragonfruit/product-10.png",
-                "image3": "../assets/dragonfruit/product.png",
+                "image2": "../assets/dragonfruit/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
                 "color2": "#f12e1c",
                 "description": "<li> is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
@@ -146,8 +132,52 @@ export class DataProvider extends Component {
                 "title": "Kiwi",
                 "price": 9,
                 "image1": "./assets/kiwi/product-14.png",
-                "image2": "../assets/kiwi/product-14.png",
-                "image3": "../assets/kiwi/product.png",
+                "image2": "../assets/kiwi/product.png",
+                "color1": "radial-gradient(#ddebaa, #96e001)",
+                "color2": "#086021",
+                "description": "is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "13",
+                "title": "Coconut",
+                "price": 5,
+                "image1": "./assets/coconuts/product-16.png",
+                "image2": "../assets/coconuts/product.png",
+                "color1": "radial-gradient(#ebccaa, #7d3c06)",
+                "color2": "#602108",
+                "description": "is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "14",
+                "title": "Peach",
+                "price": 9,
+                "image1": "./assets/peach/product-12.png",
+                "image2": "../assets/peach/product.png",
+                "color1": "radial-gradient(#ee6dc3, #e00165)",
+                "color2": "#e00165",
+                "description": "is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                ,"count" : 1
+            },
+            {
+                "_id": "15",
+                "title": "Guava",
+                "price": 9,
+                "image1": "./assets/guava/product-13.png",
+                "image2": "../assets/guava/product.png",
+                "color1": "radial-gradient(#ddebaa, #96e001)",
+                "color2": "#086021",
+                "description": "is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
+                ,"count" : 1
+            }
+            ,
+            {
+                "_id": "16",
+                "title": "Grapefruits",
+                "price": 9,
+                "image1": "./assets/grapefruits/product-15.png",
+                "image2": "../assets/grapefruits/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
                 "color2": "#086021",
                 "description": "is a sweet and refreshing low calorie summer snack</li><li> useful for staying hydrated in the summer</li><li> has high water content and also provides some fiber</li>" 
