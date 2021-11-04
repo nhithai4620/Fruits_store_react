@@ -2,6 +2,9 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {DataContext} from '../Context';
 import '../css/Products.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faAngleDoubleLeft} from '@fortawesome/free-solid-svg-icons';
+import {faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
 
 
 export class Products extends React.Component{
@@ -9,9 +12,11 @@ export class Products extends React.Component{
         super();
         this.state = {
             currentPage: 1,
-            productsPerPage: 8
+            productsPerPage: 8,
         };
         this.handleClick = this.handleClick.bind(this);
+        this.handleClickPre = this.handleClickPre.bind(this);
+        this.handleClickNext = this.handleClickNext.bind(this);
     }
 
     static contextType = DataContext;
@@ -21,10 +26,27 @@ export class Products extends React.Component{
           currentPage: Number(event.target.id)
         });
     }
+
+    handleClickPre(event) {
+        if (this.state.currentPage > 1){
+            this.setState({
+                currentPage: (this.state.currentPage - 1)
+            });
+        }
+    }
+
+    handleClickNext(event) {
+        if (this.state.currentPage < Math.round((this.context.products.length / this.state.productsPerPage))){
+        this.setState({
+            currentPage: (this.state.currentPage + 1)
+        });
+        }
+    }
+
     render(){
         const products = Object.values(this.context.products);
         const {currentPage, productsPerPage } = this.state;
-
+        // console.log(currentPage);
         const indexOfLastTodo = currentPage * productsPerPage;
         const indexOfFirstTodo = indexOfLastTodo - productsPerPage;
         const currentProducts = products.slice(indexOfFirstTodo, indexOfLastTodo);
@@ -58,15 +80,32 @@ export class Products extends React.Component{
         }
 
         const renderPageNumbers = pageNumbers.map(number => {
-            return (
-              <li
-                key={number}
-                id={number}
-                onClick={this.handleClick}
-              >
-                {number}
-              </li>
-            );
+            if (number == currentPage){
+                return (
+                    <li style={{
+                        backgroundColor: "white",
+                        color: "black"
+                    }}
+                      key={number}
+                      id={number}
+                      onClick={this.handleClick}
+                    >
+                      {number}
+                    </li>
+                  );
+            }
+            else{
+                return (
+                    <li
+                      key={number}
+                      id={number}
+                      onClick={this.handleClick}
+                    >
+                      {number}
+                    </li>
+                  );
+            }
+          
         });
 
 
@@ -75,6 +114,13 @@ export class Products extends React.Component{
         <div className="padding-header" style={{background:`${this.context.theme}`}}>
 
         </div>
+
+        <ul id="page-numbers">
+              <li onClick={this.handleClickPre}><FontAwesomeIcon icon={faAngleDoubleLeft} /></li>
+              {renderPageNumbers}
+              <li onClick={this.handleClickNext}><FontAwesomeIcon icon={faAngleDoubleRight} /></li>
+        </ul>
+
         {/* <div id="product">
             
             {
@@ -100,12 +146,14 @@ export class Products extends React.Component{
             }
         </div> */}
 
-        <div >
+        <div className='numbers-page'>
             <div id="product">
               {renderProducts}
             </div>
             <ul id="page-numbers">
+              <li onClick={this.handleClickPre}><FontAwesomeIcon icon={faAngleDoubleLeft} /></li>
               {renderPageNumbers}
+              <li onClick={this.handleClickNext}><FontAwesomeIcon icon={faAngleDoubleRight} /></li>
             </ul>
         </div>
         </>

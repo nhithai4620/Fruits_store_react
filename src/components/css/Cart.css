@@ -6,6 +6,17 @@
     width: 80%;
     margin: auto;
 }
+
+.cart{
+    max-height: 250px;
+}
+
+.cart img{
+    margin-left: 50px;
+    height: 250px;
+    max-width: 230px;
+}
+
 .Cart-content{
     width: 100%;
     margin: 30px auto;
