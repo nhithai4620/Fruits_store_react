@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Information</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="socket.io/socket.io.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h2 class="ection-heading text-center">Thông tin sinh viên</h2>
+    <form  name="myForm" action="">
+      <div class="form-group">
+        <label for="mssv">MSSV</label>
+        <input type="text" class="form-control" id="mssv" placeholder="Enter mssv" name="ID">
+      </div>
+      <div class="form-group">
+          <label for="name">Họ tên:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name" name="Name">
+      </div>
+      <div class="form-group">
+          <label for="birth">Ngày sinh: </label>
+          <input type="date" class="form-control" id="birth" placeholder="Enter birthday" name="Birth">
+      </div>
+      <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="Email">
+      </div>
+      <div class="form-group">
+        <label for="number">Số điện thoại:</label>
+        <input type="number" class="form-control" id="number" placeholder="Enter phone number" name="PhoneNumber">
+      </div>
+      <div class="form-group">
+          <label for="adress">Tỉnh:</label>
+          <input type="text" class="form-control" id="tinh" placeholder="Enter address" name="Province">
+      </div>
+      <div class="form-group">
+          <label for="adress">Xã phường:</label>
+          <input type="text" class="form-control" id="xaphuong" placeholder="Enter address" name="Wards">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <div>
+      <h2 class="ection-heading text-center">Danh sách sinh viên</h2>
+      <input id="myInput" type="text" placeholder="Search..">
+      <table id="contacts" class="table table-bordered table-responsive table-striped">
+          <thead>
+              <tr>
+                  <th>Mã số sinh viên</th>
+                  <th>Họ và tên</th>
+                  <th>Ngày sinh</th>
+                  <th>Email</th>
+                  <th>Số điện thoại</th>
+                  <th>Tỉnh</th>
+                  <th>Xã phường</th>
+              </tr>
+          </thead>
+          <tbody id ="list-student">
+              <!-- data append here -->
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+      var socket = io("http://localhost:5000");
+      socket.on("Server-send-data",function(data){
+        console.log(data);
+        data.forEach(element => {
+          $("#list-student").append(`
+              <tr>
+                  <td>${element.ID}</td>
+                  <td>${element.Name}</td>
+                  <td>${moment(element.Birth).format("YYYY-MM-DD")}</td>
+                  <td>${element.Email}</td>
+                  <td>${element.PhoneNumber}</td>
+                  <td>${element.Province}</td>
+                  <td>${element.Wards}</td>
+              </tr>
+          `)
+        });
+      })
+
+      // socket get data from database
+
+      $(document).ready(function(){
+        $( "form" ).on( "submit", function(e) {       
+            var formData = JSON.parse(JSON.stringify(jQuery($(this)).serializeArray()))
+            console.log(formData);
+            socket.emit("Client-send-data", formData);
+        });
+        //send data to server
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#list-student tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      })
+  </script>
+</body>
+</html>
+​
