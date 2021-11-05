@@ -14,7 +14,7 @@ export class Footer extends React.Component{
         <div id="footer" >
         <footer className="footer-distributed" style={{background:`${color}`}}>       
                     <div className="footer-left">    
-                    <img src="https://mir-s3-cdn-cf.behance.net/user/276/bd566661043453.597b8b4c68b4b.jpg" style={{width:"130px", border:"2px solid black"}}/>   
+                    <img alt='thai' src="https://mir-s3-cdn-cf.behance.net/user/276/bd566661043453.597b8b4c68b4b.jpg" style={{width:"130px", border:"2px solid black"}}/>   
                         <h3>Thai zoom<span>Cop</span></h3>        
                         <p className="footer-company-name">Design By Zoom Company © 2015</p>
                     </div>
@@ -40,10 +40,10 @@ export class Footer extends React.Component{
                             Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
                         </p>        
                         <div className="footer-icons">      
-                            <a href="https://www.facebook.com/profile.php?id=100012416316231" target="_blank"><img src={FacebookIcon}></img></a>
-                            <a href="https://github.com/nhithai4620" target="_blank"><img src={GithubIcon}></img></a>
-                            <a href="https://www.instagram.com/nhithai46200/?fbclid=IwAR16w1ZijZZnIhMe7xTJQZnGbHsVgWSetx59cahfMvdkIJxMFmFiFSAdmB8" target="_blank"><img src={IgIcon}></img></a>
-                            <a href="https://www.linkedin.com/in/nh%C4%A9-th%C3%A1i-nguy%E1%BB%85n-3997191b8/" target="_blank"><img src={LinkedinIcon}></img></a>      
+                            <a href="https://www.facebook.com/profile.php?id=100012416316231" ><img src={FacebookIcon} alt='thai'></img></a>
+                            <a href="https://github.com/nhithai4620"><img src={GithubIcon} alt='thai'></img></a>
+                            <a href="https://www.instagram.com/nhithai46200/?fbclid=IwAR16w1ZijZZnIhMe7xTJQZnGbHsVgWSetx59cahfMvdkIJxMFmFiFSAdmB8" ><img src={IgIcon} alt='thai'></img></a>
+                            <a href="https://www.linkedin.com/in/nh%C4%A9-th%C3%A1i-nguy%E1%BB%85n-3997191b8/" ><img src={LinkedinIcon} alt='thai'></img></a>      
                         </div>
                     </div>
         

@@ -5,7 +5,10 @@ import '../css/Products.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faAngleDoubleLeft} from '@fortawesome/free-solid-svg-icons';
 import {faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 
+const animatedComponents = makeAnimated();
 
 export class Products extends React.Component{
     constructor() {
@@ -44,6 +47,12 @@ export class Products extends React.Component{
     }
 
     render(){
+        const options = [
+            { value: 'nhap-khau', label: 'Nhập khẩu' },
+            { value: 'noi-dia', label: 'Nội địa' },
+            { value: 'trai-cay', label: 'Trái cây' },
+            { value: 'rau-cu', label: 'Rau củ' }
+        ]
         const products = Object.values(this.context.products);
         const {currentPage, productsPerPage } = this.state;
         // console.log(currentPage);
@@ -80,7 +89,7 @@ export class Products extends React.Component{
         }
 
         const renderPageNumbers = pageNumbers.map(number => {
-            if (number == currentPage){
+            if (number === currentPage){
                 return (
                     <li style={{
                         backgroundColor: "white",
@@ -114,12 +123,23 @@ export class Products extends React.Component{
         <div className="padding-header" style={{background:`${this.context.theme}`}}>
 
         </div>
-
-        <ul id="page-numbers">
-              <li onClick={this.handleClickPre}><FontAwesomeIcon icon={faAngleDoubleLeft} /></li>
-              {renderPageNumbers}
-              <li onClick={this.handleClickNext}><FontAwesomeIcon icon={faAngleDoubleRight} /></li>
-        </ul>
+        <div className='product-banner'> 
+            <div className="select-dropdown">
+                <Select
+                closeMenuOnSelect={false}
+                components={animatedComponents}
+                isMulti
+                options={options}
+                />
+            </div>
+           
+            <ul id="page-numbers">     
+                <li onClick={this.handleClickPre}><FontAwesomeIcon icon={faAngleDoubleLeft} /></li>
+                {renderPageNumbers}
+                <li onClick={this.handleClickNext}><FontAwesomeIcon icon={faAngleDoubleRight} /></li>
+            </ul>
+        </div>
+       
 
         {/* <div id="product">
             
@@ -150,11 +170,14 @@ export class Products extends React.Component{
             <div id="product">
               {renderProducts}
             </div>
-            <ul id="page-numbers">
-              <li onClick={this.handleClickPre}><FontAwesomeIcon icon={faAngleDoubleLeft} /></li>
-              {renderPageNumbers}
-              <li onClick={this.handleClickNext}><FontAwesomeIcon icon={faAngleDoubleRight} /></li>
-            </ul>
+            <div className='page-number-bottom'>
+                <ul id="page-numbers">
+                <li onClick={this.handleClickPre}><FontAwesomeIcon icon={faAngleDoubleLeft} /></li>
+                {renderPageNumbers}
+                <li onClick={this.handleClickNext}><FontAwesomeIcon icon={faAngleDoubleRight} /></li>
+                </ul>
+            </div>
+            
         </div>
         </>
         )

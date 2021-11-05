@@ -102,11 +102,17 @@
 
 }
 
+.product-banner{
+    display: flex;
+    padding: 30px 0;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+}
+
 #page-numbers{
-    width: 100%;
-    padding: 50px;
     list-style: none;
-	display: flex;
+    display: flex;
     justify-content: center;
 }
 
@@ -124,7 +130,14 @@
     transition: 0.5s;
 }
 
-  
+.select-dropdown{
+    width: 300px;
+}
+
+.page-number-bottom{
+    padding: 50px;
+}
+
 
 
 

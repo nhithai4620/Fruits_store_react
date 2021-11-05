@@ -11,7 +11,7 @@ export class About extends React.Component{
             </div>
             <div className="about" style={{backgroundImage: `url("./assets/about_bg.jpg")`}}>
                 <div className="about-img">
-                <img src="./assets/thedeliver.png" alt />
+                <img src="./assets/thedeliver.png" alt="thai"  />
                 </div>
                 <div className="about-content">
                 <h3>

@@ -47,19 +47,19 @@ export class Home extends React.Component{
         var Img = "../assets/apple-slice.png";
         var colorImg = "../assets/back1.png";
 
-        if (color == "orange"){
+        if (color === "orange"){
           Bg = "../assets/orange_bg.png";
           Img = "../assets/orange-slice.png";
           colorImg = "../assets/back1.png";
-        } else if (color == "rgb(233, 220, 30)"){
+        } else if (color === "rgb(233, 220, 30)"){
           Bg = "../assets/banana_bg.png";
           Img = "../assets/banana-slice.png";
           colorImg = "../assets/back2.png";
-        } else if (color == "#42cc14"){
+        } else if (color === "#42cc14"){
           Bg = "../assets/apple_bg.png";
           Img = "../assets/apple-slice.png";
           colorImg = "../assets/back3.png";
-        } else if (color == "#ff4000"){
+        } else if (color === "#ff4000"){
           Bg = "../assets/straw_bg.png";
           Img = "../assets/straw-slice.png";
           colorImg = "../assets/back.png";
@@ -86,22 +86,22 @@ export class Home extends React.Component{
 
               <div className="right">
                 <img 
-                  src={Img}
+                  src={Img} alt="thai" 
                 ></img>
               </div>
 
               <div className="fruit-control">
                 <div className="fruit-control-item">
-                  <img id="apple" src={AppleControl} onClick={(e) => this.context.handleTheme("#42cc14")} />
+                  <img alt="thai"  id="apple" src={AppleControl} onClick={(e) => this.context.handleTheme("#42cc14")} />
                 </div>
                 <div className="fruit-control-item">
-                  <img id="orange" src={OrangeControl} onClick={(e) => this.context.handleTheme("orange")} />
+                  <img alt="thai"  id="orange" src={OrangeControl} onClick={(e) => this.context.handleTheme("orange")} />
                 </div>
                 <div className="fruit-control-item">
-                  <img id="banana" src={BananaControl} onClick={(e) => this.context.handleTheme("rgb(233, 220, 30)")}/>
+                  <img alt="thai"  id="banana" src={BananaControl} onClick={(e) => this.context.handleTheme("rgb(233, 220, 30)")}/>
                 </div>
                 <div className="fruit-control-item">
-                  <img id="straw" src={StrawControl}  onClick={(e) => this.context.handleTheme("#ff4000")}/>
+                  <img alt="thai"  id="straw" src={StrawControl}  onClick={(e) => this.context.handleTheme("#ff4000")}/>
                 </div>
               </div>
             </div> 
@@ -193,8 +193,8 @@ export class Home extends React.Component{
                   <p>Welcome to the Traidung fruits shop Where I trust the most<br /> There are many different kinds of fruit here that you need</p>
                 </div>
                 <div className="img-box">
-                  <img src={colorImg} className="back-img" />
-                  <img src="../assets/girl.png" className="man-img" />
+                  <img src={colorImg} className="back-img" alt="thai" />
+                  <img src="../assets/girl.png" className="man-img" alt="thai" />
                 </div>
             </div>
             </div>

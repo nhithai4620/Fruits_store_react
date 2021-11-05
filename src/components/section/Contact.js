@@ -6,13 +6,13 @@ export class Contact extends React.Component{
     render(){
         var color = this.context.theme;
         var Bg = "";
-        if (color == "orange"){
+        if (color === "orange"){
           Bg = "../assets/orange_bg.png";
-        } else if (color == "rgb(233, 220, 30)"){
+        } else if (color === "rgb(233, 220, 30)"){
           Bg = "../assets/banana_bg.png";
-        } else if (color == "#42cc14"){
+        } else if (color === "#42cc14"){
           Bg = "../assets/apple_bg.png";
-        } else if (color == "#ff4000"){
+        } else if (color === "#ff4000"){
           Bg = "../assets/straw_bg.png";
         }
         return (

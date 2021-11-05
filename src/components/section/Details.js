@@ -13,7 +13,7 @@ export class Details extends React.Component{
         if(this.props.match.params.id){
             const res = this.context.products;
             const data = res.filter(item => {
-                return item._id=== this.props.match.params.id;
+                return item._id === this.props.match.params.id;
             })
             this.setState({product:data})
         }
@@ -42,14 +42,14 @@ export class Details extends React.Component{
                             <i className="fa fa-share-alt" />
                             <i className="fa fa-heart" />
                             </div>
-                            <img id="apple-img" src={item.image2} alt />
+                            <img id="apple-img" src={item.image2}  alt="thai" />
                         </div>
                         <div className="photo-ablum">
                             <ul>
-                            <li><img src="../assets/green-apple2.png" /></li>
-                            <li><img src="../assets/half-apple.png" /></li>
-                            <li><img src="../assets/apple-flipped.png" /></li>
-                            <li><img src="../assets/apple-top.png" /></li>
+                            <li><img src="../assets/green-apple2.png" alt="thai" /></li>
+                            <li><img src="../assets/half-apple.png" alt="thai" /></li>
+                            <li><img src="../assets/apple-flipped.png" alt="thai"  /></li>
+                            <li><img src="../assets/apple-top.png" alt="thai"  /></li>
                             </ul>
                         </div>
                         </div>
