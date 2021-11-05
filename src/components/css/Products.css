@@ -2,7 +2,6 @@
 	--main-color: #f9b033;
 }
 
-
 #product{
     width: 100%;
     display: flex;
@@ -47,11 +46,13 @@
     overflow: hidden;
     transition: transform 2s ease;
 }
+
 .card img:hover{
     -ms-transform: scale(1.5); /* IE 9 */
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5); 
 }
+
 .card h3{
     text-transform: uppercase;
     margin: 10px 0;
@@ -69,9 +70,11 @@
 .card span{
     color: crimson;
 }
+
 .card p{
     margin: 10px 0;
 }
+
 .card button{
     border: none;
     outline: none;
@@ -88,8 +91,11 @@
 
 }
 .card button:hover{
-    background: var(--main-color);
+    background: rgb(208, 204, 204);
+    color:black;
+    transition: 0.5s;
 }
+
 .card button:active{
     background:#A9A9A9;
     box-shadow: 0 5px #666;
