@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import io from 'socket.io-client';
 
 export const DataContext = React.createContext();
 
@@ -186,9 +186,12 @@ export class DataProvider extends Component {
         ],
         cart: [],
         total : 0,
-        theme : "#f9b033"
+        theme : "#f9b033",
+
     };
 
+    socket = io('http://localhost:5000');
+ 
     handleTheme = (color) =>{
         this.setState({theme:color});
     }
@@ -275,6 +278,12 @@ export class DataProvider extends Component {
         if(dataTheme !== null){
             this.setState({theme: dataTheme});
         }
+
+
+        this.socket.on('Server-send-data', message => {
+            message.key = JSON.stringify(message)
+            // console.log(message);
+        })
     }
     
 
