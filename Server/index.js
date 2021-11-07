@@ -32,21 +32,29 @@ io.on("connection",function(socket){
     //Disconection people
     socket.on("disconnect", function(){
         console.log("Người dùng : " + socket.id + " đã ngắt kết nối!!!!")
-    }) 
-
-    var message = {Name : "Nguyễn Nhĩ Thái"};
-    io.sockets.emit("Server-send-data",message);
+    })
 
     socket.on("login-data", function(data){
         if (data){
-            console.log(data);
+            var sql = "SELECT * FROM Customers where UserName=? and PassWord=?";
+            var values = [data.username,data.password];
+            con.query(sql,values, function(error, results) {
+                if (!results[0])	{
+                    console.log("fail");
+                    io.sockets.emit("Login-status","fail");
+                }
+                else {
+                    results=JSON.parse(JSON.stringify(results));
+                    io.sockets.emit("Login-customer-data",results[0]);
+                    io.sockets.emit("Login-status","success");
+                }
+            });
         }
     })
 
     socket.on("signup-data", function(data){
         const Id = Math.random().toString().substr(2, 10); 
         if (data){
-            console.log(data);
             var sql = "insert into Customers(Id,FullName,UserName,Email,PhoneNumber,Password) value(?,?,?,?,?,?)";
             var values = [Id, data.fullname,data.username,data.email,data.phonenumber,data.password];
             con.query(sql,values, function(error, results) {

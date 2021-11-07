@@ -3,6 +3,7 @@ import '../css/Login.css';
 import {Link} from 'react-router-dom';
 import {DataContext} from '../Context';
 import io from 'socket.io-client';
+import Home from "./Home";
 
 
 export class Login extends React.Component{
@@ -19,6 +20,7 @@ export class Login extends React.Component{
         this.setUserName = this.setUserName.bind(this)
         this.setPassWorld = this.setPassWorld.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.setLogined = this.setLogined.bind(this)
     }
 
     setUserName(event) {
@@ -33,6 +35,12 @@ export class Login extends React.Component{
         })
     }
 
+    setLogined(event){
+        this.setState({
+            logged: true
+        })
+    }
+
     handleSubmit(event) {
         event.preventDefault()
      
@@ -41,15 +49,27 @@ export class Login extends React.Component{
           password: this.state.password
         })
         
-        this.setState({
-            logged: true
+        this.socket.on('Login-status', status => {
+            if (status === "fail"){
+                window.alert("Wrong account or password");
+            } else if(status === "success"){
+                this.setLogined();
+                window.alert("Loggin succes");
+                console.log(status);
+            }
+        })
+
+        this.socket.on("Login-customer-data",data =>{
+            console.log(data);
         })
     
     }
 
     static contextType = DataContext;
     render(){
-
+        if (this.state.logged === true){
+            return <Home/>;
+        }
         return (
             <>
 

@@ -83,16 +83,14 @@ export class Signup extends React.Component{
           password: this.state.password,
         })
         
-        this.socket.on('Sign-up-status', message => {
-            console.log(message)
-            if (message === "success"){
+        this.socket.on('Sign-up-status', status => {
+            if (status === "success"){
                 this.setSignuped();
                 window.alert("Register successfully, please login!");
-            } else if (message === "fail"){
+            } else if (status === "fail"){
                 window.alert("Username already exists")
             }
         })
-     
     }
 
     static contextType = DataContext;
