@@ -4,29 +4,27 @@ app.use(express.static("public"));
 
 var server = require("http").Server(app);
 var io = require("socket.io")(server);
+var mysql = require("mysql");
 
 server.listen(5000,function(){
     console.log('Node server runing @http://localhost:5000');
 })
 
-// var mysql = require("mysql");
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "fruits_shop",
+  port: "3307"
+});
 
-// var con = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "",
-//   database: "student",
-//   port: "3307"
-// });
-
-// con.connect(function(err){
-//   if(err){
-//     console.log('Error connecting to Db');
-//     return;
-//   }
-//   console.log('Connection established');
-// });
-
+con.connect(function(err){
+  if(err){
+    console.log('Error connecting to Db');
+    return;
+  }
+  console.log('Connection established');
+});
 
 io.on("connection",function(socket){
     //Connection people
@@ -34,15 +32,7 @@ io.on("connection",function(socket){
     //Disconection people
     socket.on("disconnect", function(){
         console.log("Người dùng : " + socket.id + " đã ngắt kết nối!!!!")
-    })
-
-    // var liststudent = [];
-    // var sql = "select * from infor";
-    // con.query(sql,function(err,results){
-    //     if (err) throw err;
-    //     liststudent = results;
-    //     io.sockets.emit("Server-send-data",liststudent);
-    // });  
+    }) 
 
     var message = {Name : "Nguyễn Nhĩ Thái"};
     io.sockets.emit("Server-send-data",message);
@@ -54,8 +44,21 @@ io.on("connection",function(socket){
     })
 
     socket.on("signup-data", function(data){
+        const Id = Math.random().toString().substr(2, 10); 
         if (data){
             console.log(data);
+            var sql = "insert into Customers(Id,FullName,UserName,Email,PhoneNumber,Password) value(?,?,?,?,?,?)";
+            var values = [Id, data.fullname,data.username,data.email,data.phonenumber,data.password];
+            con.query(sql,values, function(error, results) {
+                if (error)	{
+                    console.log("fail");
+                    io.sockets.emit("Sign-up-status","fail");
+                }
+                else {
+                    console.log("success");
+                    io.sockets.emit("Sign-up-status","success");
+                }
+            });
         }
     })
 

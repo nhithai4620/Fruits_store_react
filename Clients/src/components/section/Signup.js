@@ -3,7 +3,7 @@ import '../css/Signup.css';
 import {Link} from 'react-router-dom';
 import {DataContext} from '../Context';
 import io from 'socket.io-client';
-import { eventNames } from 'process';
+import Login from './Login';
 
 export class Signup extends React.Component{
     constructor(props){
@@ -16,7 +16,7 @@ export class Signup extends React.Component{
             phonenumber: '',
             password: '',
             confirmpassword: '',
-            signuped: ''
+            signuped: false
         }
 
         this.socket = io('http://localhost:5000')
@@ -27,6 +27,7 @@ export class Signup extends React.Component{
         this.setPassword = this.setPassword.bind(this)
         this.setConfirmPassWorld = this.setConfirmPassWorld.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.setSignuped = this.setSignuped.bind(this)
     }
 
     setFullName(event){
@@ -65,6 +66,12 @@ export class Signup extends React.Component{
         })
     }
 
+    setSignuped(event){
+        this.setState({
+            signuped: true
+        })
+    }
+
     handleSubmit(event) {
         event.preventDefault()
      
@@ -76,15 +83,25 @@ export class Signup extends React.Component{
           password: this.state.password,
         })
         
-        this.setState({
-            logged: true
+        this.socket.on('Sign-up-status', message => {
+            console.log(message)
+            if (message === "success"){
+                this.setSignuped();
+                window.alert("Register successfully, please login!");
+            } else if (message === "fail"){
+                window.alert("Username already exists")
+            }
         })
-    
+     
     }
 
     static contextType = DataContext;
 
     render(){
+        console.log(this.state.signuped);
+        if (this.state.signuped === true){
+            return <Login/>
+        } else {
         return (
             <>
             <div className="padding-header" style={{backgroundColor:`${this.context.theme}`}}>
@@ -131,6 +148,7 @@ export class Signup extends React.Component{
             </div>
             </>
         );
+        }
     }
 }
 
