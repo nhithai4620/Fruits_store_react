@@ -140,7 +140,7 @@ export class Signup extends React.Component{
                     </div>
                     <input type="submit" value="Login" />
                     <div className="signup_link">
-                        Have an account ? <Link to="/login"><a href="#">Login</a></Link>
+                        Have an account ? <Link to="/login">Login</Link>
                     </div>
                 </form>
             </div>

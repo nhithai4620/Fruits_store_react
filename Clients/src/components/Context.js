@@ -187,10 +187,14 @@ export class DataProvider extends Component {
         cart: [],
         total : 0,
         theme : "#f9b033",
-
+        logined : ""
     };
 
     socket = io('http://localhost:5000');
+
+    handleLogin = (login) => {
+        this.setState({logined : login});
+    }
  
     handleTheme = (color) =>{
         this.setState({theme:color});
@@ -261,6 +265,7 @@ export class DataProvider extends Component {
         localStorage.setItem('dataCart',JSON.stringify(this.state.cart))
         localStorage.setItem('dataTotal',JSON.stringify(this.state.total))
         localStorage.setItem('dataTheme',JSON.stringify(this.state.theme))
+        localStorage.setItem('dataLogin',JSON.stringify(this.state.logined))
     };
 
     componentDidMount(){
@@ -279,20 +284,24 @@ export class DataProvider extends Component {
             this.setState({theme: dataTheme});
         }
 
+        const dataLogin = JSON.parse(localStorage.getItem('dataLogin'));
+        if(dataLogin !== null){
+            this.setState({logined: dataLogin});
+        }
+
 
         this.socket.on('Server-send-data', message => {
             message.key = JSON.stringify(message)
-            // console.log(message);
         })
     }
     
 
 
     render(){
-        const {products,cart,total,theme} = this.state;
-        const {addCart, reduction,increase,remove,getTotal,handleTheme} = this;
+        const {products,cart,total,theme,logined} = this.state;
+        const {addCart, reduction,increase,remove,getTotal,handleTheme,handleLogin} = this;
         return(
-            <DataContext.Provider value={{products,addCart,cart,theme, reduction,increase,remove,total,getTotal,handleTheme}}>
+            <DataContext.Provider value={{products,addCart,cart,theme, reduction,increase,remove,total,getTotal,handleTheme,handleLogin,logined}}>
                 {this.props.children}
             </DataContext.Provider>
         )

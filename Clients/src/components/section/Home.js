@@ -140,7 +140,7 @@ export class Home extends React.Component{
                   </ul>
                 </div>
               {/* end of class service infor */}
-              <div class="slider-text">
+              <div className="slider-text">
                 <p>GRAB THE</p>
                 <h3 style={{color:`${color}`}}>FEATURED PRODUCTS</h3>
               </div>

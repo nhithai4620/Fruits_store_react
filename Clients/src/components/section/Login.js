@@ -13,14 +13,12 @@ export class Login extends React.Component{
         this.state = {
           username: '',
           password: '',
-          logged: false,
         }
     
         this.socket = io('http://localhost:5000')
         this.setUserName = this.setUserName.bind(this)
         this.setPassWorld = this.setPassWorld.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.setLogined = this.setLogined.bind(this)
     }
 
     setUserName(event) {
@@ -32,12 +30,6 @@ export class Login extends React.Component{
     setPassWorld(event) {
         this.setState({
           password: event.target.value
-        })
-    }
-
-    setLogined(event){
-        this.setState({
-            logged: true
         })
     }
 
@@ -53,23 +45,24 @@ export class Login extends React.Component{
             if (status === "fail"){
                 window.alert("Wrong account or password");
             } else if(status === "success"){
-                this.setLogined();
-                window.alert("Loggin succes");
-                console.log(status);
+                // window.alert("Loggin succes");
+                this.context.handleLogin("true");
+                console.log("Login " + status);
             }
         })
 
         this.socket.on("Login-customer-data",data =>{
-            console.log(data);
+            // console.log(data);
         })
     
     }
 
     static contextType = DataContext;
     render(){
-        if (this.state.logged === true){
+        console.log(this.context.logined);
+        if (this.context.logined === "true"){
             return <Home/>;
-        }
+        } else{
         return (
             <>
 
@@ -92,13 +85,14 @@ export class Login extends React.Component{
                     <div className="pass">Forgot password?</div>
                     <input type="submit" value="Login" />
                     <div className="signup_link">
-                        Not a member ? <Link to="/signup"><a href="#">Sign up</a></Link>
+                        Not a member ? <Link to="/signup">Sign up</Link>
                     </div>
                 </form>
             </div>
             
             </>
         );
+        }
     }
 }
 
