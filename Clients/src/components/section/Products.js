@@ -52,6 +52,7 @@ export class Products extends React.Component{
             { value: 'noi-dia', label: 'Nội địa' },
             { value: 'trai-cay', label: 'Trái cây' },
             { value: 'rau-cu', label: 'Rau củ' },
+            { value: 'gia-vi', label: 'Gia vị' },
             { value: 'nhiet-doi' ,label: 'Nhiệt đới'},
             { value: 'on-doi', label: 'Ôn đới'}
         ]

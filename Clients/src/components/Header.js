@@ -5,6 +5,8 @@ import {DataContext} from './Context';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 export class Header extends React.Component{
     static contextType = DataContext;
@@ -40,7 +42,10 @@ export class Header extends React.Component{
                     <li><Link to="/product">Products</Link></li>
                     <li><Link to="/contact">Contact</Link></li>              
                     <li><Link to="/about">About</Link></li>
-                    <li onClick={this.handleLogout}><Link>Log out</Link> </li>
+                    <li className='dropdown'>
+                      <li> <Link><FontAwesomeIcon style={{color:"white", fontSize:"18px"}} icon={faUser} /></Link></li>
+                      <li className='dropdown-content' onClick={this.handleLogout}><Link><FontAwesomeIcon style={{color:"white", fontSize:"18px"}} icon={faSignOutAlt} /></Link> </li>
+                    </li>
                     <li className="close" onClick={this.menuToggle}>
                         <img src={Close} alt="" width="20"/>
                     </li> 

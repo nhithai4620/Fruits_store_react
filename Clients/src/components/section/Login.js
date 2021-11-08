@@ -59,7 +59,6 @@ export class Login extends React.Component{
 
     static contextType = DataContext;
     render(){
-        console.log(this.context.logined);
         if (this.context.logined === "true"){
             return <Home/>;
         } else{

@@ -74,14 +74,17 @@ export class Signup extends React.Component{
 
     handleSubmit(event) {
         event.preventDefault()
-     
-        this.socket.emit('signup-data', {
-          fullname : this.state.fullname,
-          username: this.state.username,
-          email: this.state.email,
-          phonenumber: this.state.phonenumber,
-          password: this.state.password,
-        })
+        if (this.state.password === this.state.confirmpassword){
+            this.socket.emit('signup-data', {
+                fullname : this.state.fullname,
+                username: this.state.username,
+                email: this.state.email,
+                phonenumber: this.state.phonenumber,
+                password: this.state.password,
+              })
+        } else{
+            window.alert("Confirmpassword incorrect")
+        }
         
         this.socket.on('Sign-up-status', status => {
             if (status === "success"){
@@ -96,7 +99,6 @@ export class Signup extends React.Component{
     static contextType = DataContext;
 
     render(){
-        console.log(this.state.signuped);
         if (this.state.signuped === true){
             return <Login/>
         } else {
