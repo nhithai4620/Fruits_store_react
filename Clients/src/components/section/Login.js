@@ -52,7 +52,7 @@ export class Login extends React.Component{
         })
 
         this.socket.on("Login-customer-data",data =>{
-            // console.log(data);
+            this.context.handleCustomerdata(data);
         })
     
     }

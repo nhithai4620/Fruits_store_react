@@ -14,6 +14,7 @@ export class Signup extends React.Component{
             username: '',
             email: '',
             phonenumber: '',
+            address: '',
             password: '',
             confirmpassword: '',
             signuped: false
@@ -24,6 +25,7 @@ export class Signup extends React.Component{
         this.setUserName = this.setUserName.bind(this)
         this.setEmail = this.setEmail.bind(this)
         this.setPhoneNumber = this.setPhoneNumber.bind(this)
+        this.setAddress = this.setAddress.bind(this)
         this.setPassword = this.setPassword.bind(this)
         this.setConfirmPassWorld = this.setConfirmPassWorld.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -54,6 +56,12 @@ export class Signup extends React.Component{
         })
     }
 
+    setAddress(event){
+        this.setState({
+            address: event.target.value
+        })
+    }
+
     setPassword(event){
         this.setState({
             password: event.target.value
@@ -80,6 +88,7 @@ export class Signup extends React.Component{
                 username: this.state.username,
                 email: this.state.email,
                 phonenumber: this.state.phonenumber,
+                address : this.state.address,
                 password: this.state.password,
               })
         } else{
@@ -89,7 +98,7 @@ export class Signup extends React.Component{
         this.socket.on('Sign-up-status', status => {
             if (status === "success"){
                 this.setSignuped();
-                window.alert("Register successfully, please login!");
+                alert("Register successfully, please login!");
             } else if (status === "fail"){
                 window.alert("Username already exists")
             }
@@ -129,6 +138,11 @@ export class Signup extends React.Component{
                         <input type="number" required onChange={this.setPhoneNumber}/>
                         <span></span>
                         <label>Phone number</label>
+                    </div>
+                    <div className="txt_field">
+                        <input type="text" required onChange={this.setAddress}/>
+                        <span></span>
+                        <label>Address</label>
                     </div>
                     <div className="txt_field">
                         <input type="password" required onChange={this.setPassword}/>

@@ -187,13 +187,21 @@ export class DataProvider extends Component {
         cart: [],
         total : 0,
         theme : "#f9b033",
-        logined : ""
+        logined : "",
+        customerdata : {}
     };
 
     socket = io('http://localhost:5000');
 
+    handleCustomerdata = (customer) => {
+        this.setState({customerdata: customer});
+    }
+
     handleLogin = (login) => {
         this.setState({logined : login});
+        if (login === "false"){
+            this.setState({customerdata: {}});
+        }
     }
  
     handleTheme = (color) =>{
@@ -266,6 +274,7 @@ export class DataProvider extends Component {
         localStorage.setItem('dataTotal',JSON.stringify(this.state.total))
         localStorage.setItem('dataTheme',JSON.stringify(this.state.theme))
         localStorage.setItem('dataLogin',JSON.stringify(this.state.logined))
+        localStorage.setItem('dataCustomer',JSON.stringify(this.state.customerdata))
     };
 
     componentDidMount(){
@@ -289,6 +298,11 @@ export class DataProvider extends Component {
             this.setState({logined: dataLogin});
         }
 
+        const dataCustomer = JSON.parse(localStorage.getItem('dataCustomer'));
+        if(dataCustomer !== null){
+            this.setState({customerdata: dataCustomer});
+        }
+
 
         this.socket.on('Server-send-data', message => {
             message.key = JSON.stringify(message)
@@ -298,10 +312,10 @@ export class DataProvider extends Component {
 
 
     render(){
-        const {products,cart,total,theme,logined} = this.state;
-        const {addCart, reduction,increase,remove,getTotal,handleTheme,handleLogin} = this;
+        const {products,cart,total,theme,logined,customerdata} = this.state;
+        const {addCart, reduction,increase,remove,getTotal,handleTheme,handleLogin,handleCustomerdata} = this;
         return(
-            <DataContext.Provider value={{products,addCart,cart,theme, reduction,increase,remove,total,getTotal,handleTheme,handleLogin,logined}}>
+            <DataContext.Provider value={{products,addCart,cart,theme, reduction,increase,remove,total,getTotal,handleTheme,handleLogin,logined,customerdata,handleCustomerdata}}>
                 {this.props.children}
             </DataContext.Provider>
         )

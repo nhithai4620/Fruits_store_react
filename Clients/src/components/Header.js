@@ -27,6 +27,7 @@ export class Header extends React.Component{
   render() {
     const {toggle} = this.state;
     const {cart} = this.context;
+    console.log(this.context.customerdata);
     if (this.context.logined === "true"){
         return (
           <header>
@@ -43,7 +44,7 @@ export class Header extends React.Component{
                     <li><Link to="/contact">Contact</Link></li>              
                     <li><Link to="/about">About</Link></li>
                     <li className='dropdown'>
-                      <li> <Link><FontAwesomeIcon style={{color:"white", fontSize:"18px"}} icon={faUser} /></Link></li>
+                      <li> <Link to="/profile"><FontAwesomeIcon style={{color:"white", fontSize:"18px"}} icon={faUser} /></Link></li>
                       <li className='dropdown-content' onClick={this.handleLogout}><Link><FontAwesomeIcon style={{color:"white", fontSize:"18px"}} icon={faSignOutAlt} /></Link> </li>
                     </li>
                     <li className="close" onClick={this.menuToggle}>

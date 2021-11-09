@@ -39,7 +39,7 @@ io.on("connection",function(socket){
             var sql = "SELECT * FROM Customers where UserName=? and PassWord=?";
             var values = [data.username,data.password];
             con.query(sql,values, function(error, results) {
-                if (!results[0])	{
+                if (!results[0]){
                     console.log("fail");
                     io.sockets.emit("Login-status","fail");
                 }
@@ -55,8 +55,8 @@ io.on("connection",function(socket){
     socket.on("signup-data", function(data){
         const Id = Math.random().toString().substr(2, 10); 
         if (data){
-            var sql = "insert into Customers(Id,FullName,UserName,Email,PhoneNumber,Password) value(?,?,?,?,?,?)";
-            var values = [Id, data.fullname,data.username,data.email,data.phonenumber,data.password];
+            var sql = "insert into Customers(Id,FullName,UserName,Email,PhoneNumber,Address,Password) value(?,?,?,?,?,?,?)";
+            var values = [Id, data.fullname,data.username,data.email,data.phonenumber,data.address,data.password];
             con.query(sql,values, function(error, results) {
                 if (error)	{
                     console.log("fail");
