@@ -27,7 +27,6 @@ export class Header extends React.Component{
   render() {
     const {toggle} = this.state;
     const {cart} = this.context;
-    console.log(this.context.customerdata);
     if (this.context.logined === "true"){
         return (
           <header>

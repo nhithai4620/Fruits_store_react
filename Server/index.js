@@ -37,6 +37,8 @@ io.on("connection",function(socket){
 
     var sql = "SELECT * FROM Products";
     con.query(sql, function(error, results) {
+        // results = JSON.stringify(results);
+        // console.log(results)
         io.sockets.emit("Server-send-products",results);
     });
 
