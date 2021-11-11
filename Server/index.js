@@ -34,6 +34,13 @@ io.on("connection",function(socket){
         console.log("Người dùng : " + socket.id + " đã ngắt kết nối!!!!")
     })
 
+
+    var sql = "SELECT * FROM Products";
+    con.query(sql, function(error, results) {
+        io.sockets.emit("Server-send-products",results);
+    });
+
+
     socket.on("login-data", function(data){
         if (data){
             var sql = "SELECT * FROM Customers where UserName=? and PassWord=?";
@@ -69,6 +76,9 @@ io.on("connection",function(socket){
             });
         }
     })
+
+    
+
 
     // socket.on("Client-send-data",function(data){
     //     var sql = 'insert into infor(ID,Name,Birth,Email,PhoneNumber,Province,Wards)  value(?,?,?,?,?,?,?);';

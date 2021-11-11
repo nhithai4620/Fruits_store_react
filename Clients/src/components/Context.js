@@ -14,7 +14,7 @@ export class DataProvider extends Component {
                 "image2": "../assets/apple/product.png",
                 "color1": "radial-gradient(#ddebaa, #96e001)",
                 "color2": "#01e37f",
-                "description": "Apples are nutricious</li><li>Apples may be good for weight loss</li><li>Apples may be good for bone health</li><li>They're linked to a lowest risk of diabletes</li>" 
+                "description": "Apples are nutricious. Apples may be good for weight loss. Apples may be good for bone health. They're linked to a lowest risk of diabletes" 
                 ,"count" : 1
             },
             {
@@ -304,8 +304,8 @@ export class DataProvider extends Component {
         }
 
 
-        this.socket.on('Server-send-data', message => {
-            message.key = JSON.stringify(message)
+        this.socket.on('Server-send-products', products => {
+            console.log(products);
         })
     }
     
