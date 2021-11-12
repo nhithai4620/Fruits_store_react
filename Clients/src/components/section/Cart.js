@@ -56,7 +56,8 @@ export class Cart extends React.Component{
                 ))
             }
             <div className="total">
-                <Link to="/payment">Payment</Link>
+                <Link to="/invoice" 
+                   >Invoice</Link>
                 <h3>Total : ${total}</h3>
             </div>
         </div>

@@ -34,7 +34,6 @@ io.on("connection",function(socket){
         console.log("Người dùng : " + socket.id + " đã ngắt kết nối!!!!")
     })
 
-
     var sql = "SELECT * FROM Products";
     con.query(sql, function(error, results) {
         // results = JSON.stringify(results);
@@ -79,6 +78,28 @@ io.on("connection",function(socket){
         }
     })
 
+    socket.on("invoice-data", function(data){
+        if (data){
+            console.log(data);
+           var sql1 = "insert into invoice(id,customer_id,create_at,total) value(?,?,?,?)";
+           var sql2 = "insert into invoice_details(product_id,invoice_id,quantity) value(?,?,?)";
+           values1 = [data.invoice_id,data.customer_id,data.date,data.total_invoice];
+           con.query(sql1,values1, function(error, results) {
+                if (error)	{
+                    console.log(error);
+                }
+            });
+           data.cart.map((product,index) =>{
+               values2 = [product._id,data.invoice_id,product.count];
+               con.query(sql2,values2, function(error, results) {
+                if (error)	{
+                    console.log(error);
+                }
+            });
+           })           
+        }
+    })
+
     
 
 
@@ -100,7 +121,7 @@ io.on("connection",function(socket){
     //                 console.log("success");
     //             }
     //         });
-    //     }     
+    //     }      
     // })
 });
 

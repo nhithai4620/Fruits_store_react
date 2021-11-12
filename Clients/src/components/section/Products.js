@@ -120,7 +120,6 @@ export class Products extends React.Component{
           
         });
 
-
         return(
         <>
         <div className="padding-header" style={{background:`${this.context.theme}`}}>

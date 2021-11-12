@@ -119,5 +119,9 @@ input[type="submit"]:hover{
     text-decoration: underline;
 }
 
+.login-please{
+    text-align: center;
+    padding: 300px;
+}
 
 

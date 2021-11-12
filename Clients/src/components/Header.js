@@ -34,7 +34,7 @@ export class Header extends React.Component{
               <img src={Menu} alt="" width="20"/>
             </div>
             <div className="logo">
-              <Link href="/home" className="logo_name">Traidung</Link>
+              <Link href="/home" className="logo_name">Zoom</Link>
             </div>
             <nav>
                 <ul className={toggle ? "toggle" : ""}>

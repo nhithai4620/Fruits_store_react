@@ -30,6 +30,10 @@ export class DataProvider extends Component {
         this.setState({theme:color});
     }
 
+    clearCart = () => {
+        this.setState({cart : []});
+    }
+
     addCart = (id) => {
         const {products,cart} = this.state;
         const check = cart.every(item =>{
@@ -135,9 +139,9 @@ export class DataProvider extends Component {
 
     render(){
         const {products,cart,total,theme,logined,customerdata} = this.state;
-        const {addCart, reduction,increase,remove,getTotal,handleTheme,handleLogin,handleCustomerdata} = this;
+        const {addCart, reduction,increase,remove,getTotal,handleTheme,handleLogin,handleCustomerdata,clearCart } = this;
         return(
-            <DataContext.Provider value={{products,addCart,cart,theme, reduction,increase,remove,total,getTotal,handleTheme,handleLogin,logined,customerdata,handleCustomerdata}}>
+            <DataContext.Provider value={{products,addCart,cart,theme, reduction,increase,remove,total,getTotal,handleTheme,handleLogin,logined,customerdata,handleCustomerdata,clearCart }}>
                 {this.props.children}
             </DataContext.Provider>
         )
