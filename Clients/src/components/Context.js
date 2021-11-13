@@ -10,7 +10,8 @@ export class DataProvider extends Component {
         total : 0,
         theme : "#f9b033",
         logined : "",
-        customerdata : {}
+        customerdata : {},
+        admin: ""
     };
 
     socket = io('http://localhost:5000');
@@ -128,7 +129,6 @@ export class DataProvider extends Component {
         if(dataCustomer !== null){
             this.setState({customerdata: dataCustomer});
         }
-
 
         this.socket.on('Server-send-products', data => {
             this.setState({products: data})

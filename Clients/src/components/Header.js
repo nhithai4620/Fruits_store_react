@@ -29,7 +29,7 @@ export class Header extends React.Component{
     const {cart} = this.context;
     if (this.context.logined === "true"){
         return (
-          <header>
+          <header id="header">
             <div className="menu" onClick={this.menuToggle}> 
               <img src={Menu} alt="" width="20"/>
             </div>
@@ -61,12 +61,12 @@ export class Header extends React.Component{
       );
     } else{
         return (
-          <header>
+          <header id="header">
             <div className="menu" onClick={this.menuToggle}> 
               <img src={Menu} alt="" width="20"/>
             </div>
             <div className="logo">
-              <Link to="/home" className="logo_name">Traidung</Link>
+              <Link to="/home" className="logo_name">Zoom</Link>
             </div>
             <nav>
                 <ul className={toggle ? "toggle" : ""}>

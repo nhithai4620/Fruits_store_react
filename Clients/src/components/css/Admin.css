@@ -1,0 +1,33 @@
+#header{
+    display: none;
+}
+
+footer{
+    display: none;
+}
+
+.admin{
+    height: 800px;
+    display: flex;
+}
+
+.admin-vertical-menu {
+    width: 200px;
+}
+
+.admin-vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.admin-vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.admin-vertical-menu a.active {
+    background-color: crimson;
+    color: white;
+}

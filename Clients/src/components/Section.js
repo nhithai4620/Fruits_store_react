@@ -9,6 +9,7 @@ import Contact from './section/Contact';
 import About from './section/About';
 import Profile from './section/Profile';
 import Invoice from './section/invoice';
+import Admin from './section/Admin';
 import {Route} from "react-router-dom";
 
 export class Section extends React.Component{
@@ -26,6 +27,7 @@ export class Section extends React.Component{
         <Route path="/about" component={About} exact/>
         <Route path="/profile" component={Profile} exact/>
         <Route path="/invoice" component={Invoice} exact/>
+        <Route path="/admin" component={Admin} exact/>
       </section>
     );
   }
